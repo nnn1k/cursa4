@@ -1,0 +1,144 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    font-family: "Open Sans", sans-serif;
+    background-image: url('/static/img/background.jpg');
+}
+
+
+.header {
+    background-color: #4660C5;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    align-items: center;
+}
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header li {
+    margin-right: 20px;
+}
+.header a {
+    color: #fff;
+    text-decoration: none;
+}
+.header a:hover {
+    color: #ff2f2f;
+    text-decoration: none;
+}
+.header .phone {
+    font-size: 18px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.square {
+    width: 600px;
+    height: 650px;
+    background-color: #f7f7f7;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+.label {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #4660C5;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.label1 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #f53939;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+
+.form-field {
+    margin-bottom: 19px;
+}
+.input-field {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #e0e0e0;
+
+}
+
+
+
+.button {
+    background-color: #4660C5;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.forgot-password {
+    font-size: 14px;
+    color: #6d8fec;
+    text-decoration: none;
+    float: right;
+}
+
+
+
+.registration {
+    font-size: 14px;
+    color: #6d8fec;
+    text-decoration: none;
+    float: right;
+}
+
+.forgot-password:hover {
+    color: #333;
+}
+
+.addfile{
+    display: block;
+    position: absolute;
+    width: 186px;
+    height: 45px;
+    border-radius: 10px;
+    margin-top: -45px;
+    opacity: 0;
+    background-color: #f53939;
+}

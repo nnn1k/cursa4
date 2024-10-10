@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/auth/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <title>Login</title>
+</head>
+    {% extends 'base.html' %}
+     {% block content %}
+<body>
+    <div class="square">
+        <div class="label">Авторизация</div>
+        <div class="label1" name="flash">
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+        </div>
+        <form method="post">
+            <div class="form-field">
+                <label for="login">Логин:</label>
+                <input type="text" id="login" name="login" class="input-field" value="">
+            </div>
+            <div class="form-field">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" class="input-field" value="">
+            </div>
+            <a href="../forgot_password.html" class="forgot-password">забыли пароль?</a>
+            <input type="submit" class="button" value="Войти">
+            <div class="form-field"></div>
+            <p>нет аккаунта?<a href="{{ url_for('auth.register_page') }}" class="registration">Зарегистрироваться</a></p>
+        </form>
+    </div>
+</body>
+    {% endblock %}
+</html>

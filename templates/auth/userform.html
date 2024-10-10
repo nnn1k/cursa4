@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/auth/userform.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <title>main</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">ЛАЗУРНЫЙ</div>
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Список услуг</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Личный кабинет</a></li>
+        </ul>
+        <div class="phone">+7 000 000 00 00</div>
+    </header>
+    <div class="square">
+        <div class="label">Анкета</div>
+        <div class="label1" name="flash">
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+        </div>
+        <form action="login" method="post">
+        </form>
+        
+        <form class="pole"  method="post">
+            <div class="form-field">
+                <button class="button" type="submit">Добавить фото</button>
+                <input name="myFile" type="file" class="addfile">
+            </div>
+            <div class="form-field">
+                <label for="password">Имя:</label>
+                <input type="text" id="name" name="name" class="input-field" value="">
+            </div>
+            <div class="form-field">
+                <label for="password">фамилия:</label>
+                <input type="text" id="surname" name="surname" class="input-field" value="">
+            </div>
+            <div class="form-field">
+                <label for="password">E-mail:</label>
+                <input type="email" id="email" name="email" class="input-field" value="">
+            </div>
+            <div class="form-field">
+                <label for="password">Телефон:</label>
+                <input type="Text" id="phone" name="phone" class="input-field" value="">
+            </div>
+            <input type="submit" class="button" value="Продолжить">
+            <div class="form-field"></div>
+        </form>
+    </div>
+</body>
+
+</html>
