@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <title>main</title>
 </head>
 <body>
+    {% block header %}
     <header class="header">
         <div class="logo">ЛАЗУРНЫЙ</div>
         <ul>
@@ -15,8 +22,41 @@
         </ul>
         <div class="phone">+7 000 000 00 00</div>
     </header>
-    {% block content %} {% endblock %}
+    {% endblock %}
+    <div id="content">{% block content %} {% endblock %} </div>
+    {% block footer %}
 
-
+    <footer class="reklama">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="reklamaText"> Запишитесь на БЕСПЛАТНУЮ тренеровку<p>Акция действительна до 10 марта 2025 года</p></div>
+        <form action="zayavka" method="post">
+            <div class="form-field">
+                <input type="text" placeholder="Имя" id="text" name="password" class="input-field" value="">
+            </div>
+            <div class="form-field">
+                <input type="password" placeholder="Пароль" id="password" name="password" class="input-field" value="">
+            </div>
+            <div class="form-field">
+                <input type="E-mail" placeholder="Почта" id="E-mail" name="password" class="input-field" value="">
+            </div>
+            <button class="button" type="submit">Отправить</button>
+        </form>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </footer>
+    <footer class="footer">
+            <section>
+                <div class="logo">Спорткомплекс "Лазурный"<p>© Лазурный</p></div>
+            </section>
+            <section>
+                <div class="phone">+7 000 000 00 00</div>
+            </section>
+    </footer>
+    {% endblock %}
 </body>
 </html>

@@ -1,0 +1,115 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    font-family: "Open Sans", sans-serif;
+    
+}
+
+
+.header {
+    background-color: #4660C5;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header li {
+    margin-right: 20px;
+}
+.header a {
+    color: #fff;
+    text-decoration: none;
+}
+.header a:hover {
+    color: #ff2f2f;
+}
+.header .phone {
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.footer {
+    background-color: #4660C5;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p {
+    text-align: left;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+.reklama {
+    height: 200px;
+    background-image: url('static/img/red.jpg');
+}
+
+.button {
+    background-color: #000000;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.reklama {
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reklamaText{
+    font-size: large;
+    font-weight: bold;
+    background-position: center;
+    background-size: cover;
+}
+
+.reklamaText p{
+    font-size: 13px;
+    font-weight: lighter;
+}
+.input-field {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+

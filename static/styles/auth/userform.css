@@ -13,46 +13,6 @@ body {
 }
 
 
-.header {
-    background-color: #4660C5;
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    text-decoration: none;
-    align-items: center;
-}
-.header .logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-right: 20px;
-}
-.header ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.header li {
-    margin-right: 20px;
-}
-.header a {
-    color: #fff;
-    text-decoration: none;
-}
-.header a:hover {
-    color: #ff2f2f;
-    text-decoration: none;
-}
-.header .phone {
-    font-size: 18px;
-    margin-left: 20px;
-    text-decoration: none;
-}
-
 .square {
     width: 600px;
     height: 650px;
@@ -134,6 +94,7 @@ body {
 
 .addfile{
     display: block;
+    cursor: pointer;
     position: absolute;
     width: 186px;
     height: 45px;

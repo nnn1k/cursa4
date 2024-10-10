@@ -12,48 +12,9 @@ body {
 }
 
 
-.header {
-    background-color: #4660C5;
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.header .logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-right: 20px;
-}
-.header ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.header li {
-    margin-right: 20px;
-}
-.header a {
-    color: #fff;
-    text-decoration: none;
-}
-.header a:hover {
-    color: #ff2f2f;
-}
-.header .phone {
-    font-size: 18px;
-    margin-left: 20px;
-}
-
-
 .square {
     width: 400px;
     height: 400px;
-    background-image: url('image.jpg');
     background-size: cover;
     background-position: center;
     background-color: #ffffff;

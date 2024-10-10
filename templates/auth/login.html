@@ -11,9 +11,10 @@
         rel="stylesheet">
     <title>Login</title>
 </head>
+
+<body>
     {% extends 'base.html' %}
      {% block content %}
-<body>
     <div class="square">
         <div class="label">Авторизация</div>
         <div class="label1" name="flash">
@@ -29,12 +30,10 @@
         </div>
         <form method="post">
             <div class="form-field">
-                <label for="login">Логин:</label>
-                <input type="text" id="login" name="login" class="input-field" value="">
+                <input type="text" placeholder="Логин" id="login" name="login" class="input-field" value="">
             </div>
             <div class="form-field">
-                <label for="password">Пароль:</label>
-                <input type="password" id="password" name="password" class="input-field" value="">
+                <input type="password" placeholder="Пароль" id="password" name="password" class="input-field" value="">
             </div>
             <a href="../forgot_password.html" class="forgot-password">забыли пароль?</a>
             <input type="submit" class="button" value="Войти">
@@ -42,6 +41,8 @@
             <p>нет аккаунта?<a href="{{ url_for('auth.register_page') }}" class="registration">Зарегистрироваться</a></p>
         </form>
     </div>
-</body>
     {% endblock %}
+
+</body>
+
 </html>
