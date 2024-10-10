@@ -5,13 +5,16 @@
     <title>startpage</title>
 </head>
 <body>
-    <h1> Hello </h1>
-    {% if current_user.is_authenticated  %}
+    {% extends 'base.html' %}
+    {% block content %}
+    	{% if current_user.is_authenticated  %}
         <a href="{{ url_for('closed_page') }}"> Closed</a>
 
     {% else %}
         <a href="{{ url_for('auth.login_page') }}"> Login</a>
     {% endif %}
+    {% endblock %}
+
 
 </body>
 </html>

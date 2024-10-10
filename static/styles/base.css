@@ -8,7 +8,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     font-family: "Open Sans", sans-serif;
-    
 }
 
 
@@ -60,7 +59,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
+
 
 .footer p {
     text-align: left;
@@ -72,7 +73,7 @@ body {
 
 .reklama {
     height: 200px;
-    background-image: url('static/img/red.jpg');
+    background-image: url('/static/img/red.jpg');
 }
 
 .button {
@@ -113,3 +114,6 @@ body {
     font-size: 15px;
 }
 
+.content{
+    height: 100vh;
+}

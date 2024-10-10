@@ -23,40 +23,47 @@
         <div class="phone">+7 000 000 00 00</div>
     </header>
     {% endblock %}
-    <div id="content">{% block content %} {% endblock %} </div>
-    {% block footer %}
 
-    <footer class="reklama">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="reklamaText"> Запишитесь на БЕСПЛАТНУЮ тренеровку<p>Акция действительна до 10 марта 2025 года</p></div>
-        <form action="zayavka" method="post">
-            <div class="form-field">
-                <input type="text" placeholder="Имя" id="text" name="password" class="input-field" value="">
-            </div>
-            <div class="form-field">
-                <input type="password" placeholder="Пароль" id="password" name="password" class="input-field" value="">
-            </div>
-            <div class="form-field">
-                <input type="E-mail" placeholder="Почта" id="E-mail" name="password" class="input-field" value="">
-            </div>
-            <button class="button" type="submit">Отправить</button>
-        </form>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </footer>
-    <footer class="footer">
-            <section>
-                <div class="logo">Спорткомплекс "Лазурный"<p>© Лазурный</p></div>
-            </section>
-            <section>
-                <div class="phone">+7 000 000 00 00</div>
-            </section>
-    </footer>
+    <div class="content"> {% block content %} {% endblock %} </div>
+
+    {% block footer %}
+    {% if page_type != 'auth' %}
+<footer>
+    <div class="reklama">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="reklamaText"> Запишитесь на БЕСПЛАТНУЮ тренеровку<p>Акция действительна до 10 марта 2025 года</p></div>
+    <form action="zayavka" method="post">
+        <div class="form-field">
+            <input type="text" placeholder="Имя" id="text" name="password" class="input-field" value="">
+        </div>
+        <div class="form-field">
+            <input type="password" placeholder="Пароль" id="password" name="password" class="input-field" value="">
+        </div>
+        <div class="form-field">
+            <input type="E-mail" placeholder="Почта" id="E-mail" name="password" class="input-field" value="">
+        </div>
+        <button class="button" type="submit">Отправить</button>
+    </form>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<div class="footer">
+        <section>
+            <div class="logo">Спорткомплекс "Лазурный"<p>© Лазурный</p></div>
+        </section>
+        <section>
+            <div class="phone">+7 000 000 00 00</div>
+        </section>
+</div>
+</footer>
+
+{#    <div class="space" style="min-height: 1000px "></div> #}
+    {% endif %}
     {% endblock %}
 </body>
 </html>

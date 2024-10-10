@@ -28,7 +28,7 @@ def login_page():
             else:
                 flash('Логин или пароль не являются правильными')
 
-    return render_template('auth/login.html')
+    return render_template('auth/login.html', page_type='auth')
 
 
 @auth.route('/register', methods=['GET', 'POST'])
