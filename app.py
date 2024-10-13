@@ -36,7 +36,6 @@ def closed_page():
 @app.route('/test_photo', methods=['GET', 'POST'])
 def test_photo():
     if request.method == 'POST':
-
         if 'photo' not in request.files:
             flash('Не могу прочитать файл')
             return redirect(request.url)
