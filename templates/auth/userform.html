@@ -14,16 +14,8 @@
 
 <body>
 
-    <header class="header">
-        <div class="logo">ЛАЗУРНЫЙ</div>
-        <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">Список услуг</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Личный кабинет</a></li>
-        </ul>
-        <div class="phone">+7 000 000 00 00</div>
-    </header>
+    {% extends 'base.html' %}
+     {% block content %}
     <div class="square">
         <div class="label">Анкета</div>
         <div class="label1" name="flash">
@@ -46,21 +38,22 @@
                 <input name="myFile" type="file" class="addfile">
             </div>
             <div class="form-field">
-                <input type="text" placeholder="Имя" id="name" name="name" class="input-field" value="">
+                <input type="text" placeholder="Имя" id="name" name="name" class="input-field" value="{{ user.name }}">
             </div>
             <div class="form-field">
-                <input type="text" placeholder="Фамилия" id="surname" name="surname" class="input-field" value="">
+                <input type="text" placeholder="Фамилия" id="surname" name="surname" class="input-field" value="{{ user.surname }}">
             </div>
             <div class="form-field">
-                <input type="E-mail" placeholder="E-mail" id="email" name="email" class="input-field" value="">
+                <input type="E-mail" placeholder="E-mail" id="email" name="email" class="input-field" value="{{ user.email }}">
             </div>
             <div class="form-field">
-                <input type="Text" placeholder="Телефон" id="number" name="number" class="input-field" value="">
+                <input type="Text" placeholder="Телефон" id="phone" name="phone" class="input-field" value="{{ user.phone }}">
             </div>
             <input type="submit" class="button" value="Продолжить">
             <div class="form-field"></div>
         </form>
     </div>
+    {% endblock %}
 </body>
 
 </html>

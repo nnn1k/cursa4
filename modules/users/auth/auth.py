@@ -53,7 +53,7 @@ def register_page():
             else:
                 flash('Пользователь уже существует')
 
-    return render_template('auth/register.html')
+    return render_template('auth/register.html', page_type='auth')
 
 @auth.route('/userform', methods=['GET', 'POST'])
 @login_required
@@ -62,16 +62,21 @@ def userform_page():
     surname = request.form.get('surname')
     email = request.form.get('email')
     phone = request.form.get('phone')
+    user_id = current_user.id
+    user = get_user_for_id(current_user.id)
 
     if request.method == 'POST':
         if not (name and surname and email and phone):
             flash('Заполните все поля')
-        user_id = current_user.id
 
         filling_form(user_id, name, surname, email, phone)
         return redirect(url_for('closed_page'))
-    return render_template('auth/userform.html')
+    return render_template('auth/userform.html', page_type='auth', user=user)
 
+
+@auth.route('/forgot_password', methods=['GET', 'POST'])
+def forgot_password_page():
+    return render_template('auth/forgot_password.html', page_type='auth')
 
 @auth.route('/logout', methods=['GET', 'POST'])
 @login_required

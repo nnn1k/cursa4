@@ -76,7 +76,7 @@ body {
     background-image: url('/static/img/red.jpg');
 }
 
-.button {
+.button-base {
     background-color: #000000;
     color: #fff;
     padding: 15px 30px;
@@ -106,7 +106,7 @@ body {
     font-size: 13px;
     font-weight: lighter;
 }
-.input-field {
+.input-field-base {
     width: 300px;
     padding: 10px;
     border: none;
