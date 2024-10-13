@@ -55,7 +55,6 @@ def test_photo():
 def download_file(name):
     return send_from_directory(app.config["UPLOAD_FOLDER"], name)
 
-
 # обработка запросов
 @app.after_request
 def redirect_to_signin(response):
