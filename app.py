@@ -57,6 +57,7 @@ def download_file(name):
 
 # обработка запросов
 
+
 @app.after_request
 def redirect_to_signin(response):
     if response.status_code == 401:
