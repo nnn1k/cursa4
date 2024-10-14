@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <div class="title">
+        <form class="title1" action="">
+            <div class="inputImg">
+                <input type="file" id="fileInput" accept="image/*" style="display: none;" multiple>
+                <button id="uploadButton">Добавить изображение</button>
+            </div>
+            <div class="FIO">
+                <div class="name">1<p>1</p>
+                </div>
+                <div class="mail">EMAIL@GMAIL.COM</div>
+            </div>
+        </form>
+        <div class="cash">
+            <p>БАЛАНС</p>
+            <li><a href="#">Пополнить</a></li>
+        </div>
+    </div>
+    <div class="history">
+        <div class="history-aboniment">
+            <div class="block">
+                <div class="imya">название</div>
+                <div class="data">дата</div>
+            </div>
+        </div>
+        <div class="history-lesson">
+            <div class="block1">
+                <div class="circle"><img class="img" src="round.png" alt=""></div>
+                <div class="name-lesson" id="text-container">название</div>
+                <div class="data-lesson">дата</div>
+                <div class="price">цена</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('uploadButton').addEventListener('click', function () {
+            document.getElementById('fileInput').click();
+        });
+
+        document.getElementById('fileInput').addEventListener('change', function (event) {
+            const files = event.target.files;
+            for (let i = 0; i < files.length; i++) {
+                console.log('Выбран файл: ', files[i].name);
+            }
+        });
+
+        function limitCharactersAndWrap(elementId, maxCharsPerLine) {
+            const element = document.getElementById(elementId);
+            const originalText = element.textContent;
+            const words = originalText.split(' ');
+            let currentLine = '';
+            let formattedText = '';
+
+            words.forEach(word => {
+                if ((currentLine + word).length > maxCharsPerLine) {
+                    formattedText += currentLine.trim() + '\n';
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+
+            formattedText += currentLine.trim(); // Добавляем последнюю строку
+            element.textContent = formattedText;
+        }
+
+        limitCharactersAndWrap('text-container', 10);
+    </script>
+</body>
+
+</html>
