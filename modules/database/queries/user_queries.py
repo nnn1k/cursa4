@@ -10,6 +10,11 @@ def auth_user(login, password) -> User:
     else:
         return None
 
+def add_user(login, password) -> User:
+    db.execute_query('insert into users (login, password) values (?, ?)', login, password)
+
+    return get_user_for_login(login)
+
 def get_user_for_login(login) -> User:
     res = db.execute_query('select * from users where login = ?', login, is_select=True)
     if not res['error'] and res['result']:
@@ -17,10 +22,6 @@ def get_user_for_login(login) -> User:
         return user
     else:
         return None
-def add_user(login, password) -> User:
-    db.execute_query('insert into users (login, password) values (?, ?)', login, password)
-
-    return get_user_for_login(login)
 
 def get_user_for_id(user_id) -> User:
     res = db.execute_query('select * from users where id = ?', user_id,  is_select=True)['result']
@@ -31,13 +32,26 @@ def get_user_for_id(user_id) -> User:
     else:
         return None
 
-def filling_form(user_id, name, surname, email, phone) -> User:
+def get_user_for_email(email) -> User:
+    res = db.execute_query('select * from users where email = ?', email,  is_select=True)['result']
+
+    if res:
+        user = User(*res[0])
+        return user
+    else:
+        return None
+
+def filling_form(user_id, name, surname, email, phone, photo_url) -> User:
     db.execute_query('''
         update users 
-        set name = ?, surname = ?, email = ?, phone = ?
+        set name = ?, surname = ?, email = ?, phone = ?, photo_url = ?
         where id = ?
-        ''', name, surname, email, phone, user_id)
+        ''', name, surname, email, phone, photo_url, user_id)
     print('user update')
     return get_user_for_id(user_id)
 
+def update_password(user_id, password) -> User:
+    db.execute_query('update users set password = ? where id = ?', password, user_id)
+    print('password update')
+    return get_user_for_id(user_id)
 

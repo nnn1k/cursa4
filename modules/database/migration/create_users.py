@@ -26,5 +26,14 @@ def create_users():
         );
     ''')
 
-    print('users and reviews created')
+    db.execute_query('''
+        create table verification_code(
+        id int primary key identity(1, 1),
+        user_id int foreign key references users,
+        code nvarchar(10) not null,
+        create_at datetime default getutcdate()
+    );
+    ''')
+
+    print('users, reviews and verification_code created')
 

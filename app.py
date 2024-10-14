@@ -1,31 +1,30 @@
-from os.path import join, dirname, realpath
-from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
+from flask import Flask, render_template, request, url_for, send_from_directory
 from flask_login import LoginManager, current_user, login_required
 from modules.database.queries.user_queries import *
-from modules.users.auth.auth import auth
-from werkzeug.utils import secure_filename
+from modules.users.auth import auth
+from modules.users.fp import fp
+from modules.users.profile import profile
+from modules.func.utils import *
 
 UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'D:\projects\python\kursa4\static\img\photos')
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['ALLOWED_EXTENSIONS'] = ALLOWED_EXTENSIONS
+app.config['SECRET_KEY'] = 'secretkeyyyyyyyy'
 
 app.register_blueprint(auth, url_prefix='/auth')
+app.register_blueprint(fp, url_prefix='/auth/forgot_password')
+app.register_blueprint(profile, url_prefix='/profile')
 
 manager = LoginManager(app)
-
-app.secret_key = 'secretkeyyyyyyyy'
-
-def allowed_file(filename):
-    ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-    """ Функция проверки расширения файла """
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 @app.route('/')
 def start_page():
     return render_template('startpage.html')
+
 
 @app.route('/closed_page', methods=['GET', 'POST'])
 @login_required
@@ -43,8 +42,9 @@ def test_photo():
         if photo.filename == '':
             flash('Нет выбранного файла')
             return redirect(request.url)
-        if photo and allowed_file(photo.filename):
-            filename = secure_filename(photo.filename)
+        if photo:
+            type = photo.filename.rsplit('.', 1)[1]
+            filename = f'test.{type}'
             photo.save(join(app.config['UPLOAD_FOLDER'], filename))
 
         return redirect(url_for('download_file', name=filename))
@@ -61,8 +61,10 @@ def download_file(name):
 def redirect_to_signin(response):
     if response.status_code == 401:
         return redirect(url_for('auth.login_page') + '?next=' + request.url)
-    if response.status_code == 500:
-        return redirect(url_for('error_500'))
+
+    #if response.status_code == 500:
+    #return redirect(url_for('error_500'))
+
     return response
 
 
