@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, sen
 from flask_login import LoginManager, current_user, login_required
 from modules.database.queries.user_queries import *
 from modules.users.auth.auth import auth
+from modules.users.auth.fp import fp
 from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'D:\projects\python\kursa4\static\img\photos')
@@ -11,6 +12,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app.register_blueprint(auth, url_prefix='/auth')
+app.register_blueprint(fp, url_prefix='/auth/forgot_password')
 
 manager = LoginManager(app)
 
@@ -61,8 +63,10 @@ def download_file(name):
 def redirect_to_signin(response):
     if response.status_code == 401:
         return redirect(url_for('auth.login_page') + '?next=' + request.url)
-    if response.status_code == 500:
-        return redirect(url_for('error_500'))
+
+    #if response.status_code == 500:
+    #return redirect(url_for('error_500'))
+
     return response
 
 

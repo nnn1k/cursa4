@@ -74,13 +74,9 @@ def userform_page():
     return render_template('auth/userform.html', page_type='auth', user=user)
 
 
-@auth.route('/forgot_password', methods=['GET', 'POST'])
-def forgot_password_page():
-    return render_template('auth/forgot_password.html', page_type='auth')
-
 @auth.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('hello_world'))
+    return redirect(url_for('start_page'))
 

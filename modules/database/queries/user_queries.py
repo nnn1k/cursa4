@@ -31,6 +31,15 @@ def get_user_for_id(user_id) -> User:
     else:
         return None
 
+def get_user_for_email(email) -> User:
+    res = db.execute_query('select * from users where email = ?', email,  is_select=True)['result']
+
+    if res:
+        user = User(*res[0])
+        return user
+    else:
+        return None
+
 def filling_form(user_id, name, surname, email, phone) -> User:
     db.execute_query('''
         update users 
@@ -40,4 +49,8 @@ def filling_form(user_id, name, surname, email, phone) -> User:
     print('user update')
     return get_user_for_id(user_id)
 
+def update_password(user_id, password) -> User:
+    db.execute_query('update users set password = ? where id = ?', password, user_id)
+    print('password update')
+    return get_user_for_id(user_id)
 
