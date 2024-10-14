@@ -140,4 +140,11 @@ body{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.circle {
+    width: 100px;
+    height: 100px;
+    margin-right: 30px;
+    border-radius: 110%;
+    display: flex;
+    justify-content: center;
+}
