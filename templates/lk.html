@@ -7,26 +7,48 @@
 </head>
 <body>
 <div class="title">
-    <div class="head">
-        <div class="foto">
-            <button class="button" type="submit">Добавить фото</button>
-            <input name="myFile" type="file" class="addfile">
+    <form class="title1" action="">
+        <div class="inputImg">
+            <input type="file" id="fileInput" accept="image/*" style="display: none;" multiple>
+            <button id="uploadButton">Добавить изображение</button>
         </div>
-
         <div class="FIO">
-            <p class="name">zzz</p>
-            <p class="surname">ooo</p>
-            <p class="mail">vvv</p>
+            <div class="name">1<p>1</p></div>
+            <div class="mail">EMAIL@GMAIL.COM</div>
         </div>
-
+    </form>
         <div class="cash">
             <p>БАЛАНС</p>
             <li><a href="#">Пополнить</a></li>
         </div>
-
-        <div class="foot">
-            z
+</div>
+<div class="history">
+    <div class="history-aboniment">
+        <div class="block">
+            <div class="imya">название</div>
+            <div class="data">дата</div>
         </div>
     </div>
+    <div class="history-lesson">
+        <div class="block1">
+            <div class="name-lesson">название</div>
+            <div class="data-lesson">дата</div>
+            <div class="price">цена</div>
+        </div>
+    </div>
+</div>
+
+    <script>
+document.getElementById('uploadButton').addEventListener('click', function() {
+    document.getElementById('fileInput').click();
+        });
+
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const files = event.target.files;
+            for (let i = 0; i < files.length; i++) {
+                console.log('Выбран файл: ', files[i].name);
+            }
+        });
+    </script>
 </body>
 </html>
