@@ -1,8 +1,7 @@
-body{
+body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 20px;
-
     justify-content: center;
 
 }
@@ -10,6 +9,7 @@ body{
     background-color: #3429db;
     justify-content: center;
     color: white;
+    margin-top: 15px;
     padding: 10px 10px;
     border: none;
     border-radius: 5px;
@@ -20,22 +20,21 @@ body{
 #uploadButton:hover {
     background-color: #376bdd;
 }
-.title{
+.title {
     text-align: center;
     padding: 30px;
-
     background-color: rgb(236, 234, 234);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    gap: 500px;
+    justify-content: space-between;
 }
-.title1{
+.title1 {
     padding: 30px;
     display: flex;
     gap: 100px;
 }
-.inputImg{
+.inputImg {
     text-align: center;
     padding: 30px;
     background-color: white;
@@ -49,9 +48,9 @@ body{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.cash{
-    margin: auto;
-    text-align: center;
+.cash {
+    height: 111px;
+    margin-top:30px;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
@@ -62,59 +61,87 @@ body{
     list-style-type: none;
     padding: 10px;
 }
-.cash a{
+.cash a {
     text-decoration: none;
 }
-.history{
+.history {
     margin: 30px;
     display: flex;
     justify-content: space-between;
 }
-.history-aboniment{
+.history-aboniment {
     display: flex;
     margin:0 50px 0 50px;
 }
-.imya{
+.imya {
     text-align: center;
+    margin: auto;
     padding: 20px;
+    width: 80px;
+    height: 15px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.data{
+.data {
     display: flex;
+    margin: auto;
     text-align: center;
     padding: 20px;
-    margin:0 0 0 50px;
+    width: 35px;
+    height: 15px;
+    margin:0 1 0 50px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.block{
+.block {
     justify-content: space-between;
     text-align: center;
     display: flex;
+    width: 400px;
+    height: 120px;
     padding: 20px;
     background-color: rgb(70, 68, 236);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.history-lesson{
+.history-lesson {
     display: flex;
     margin:0 50px 0 50px;
 }
 .block1{
-    justify-content: space-between;
+    position: relative;
     text-align: center;
     display: flex;
+    width: 500px;
+    height: 120px;
     padding: 20px;
     background-color: rgb(70, 68, 236);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.name-lesson{
-    display: flex;
+#text-container {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+.name-lesson {
+    position: absolute;
+    right: 60px;
+    width: 300px;
+    height: 20px;
+    padding: 20px;
+    margin:0 1 0 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.data-lesson {
+    position: relative;
+    bottom: -40px;
+    left: 187px;
+    margin: auto;
     text-align: center;
     padding: 20px;
     margin:0 1 0 50px;
@@ -122,23 +149,19 @@ body{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.data-lesson{
-    display: flex;
+.price {
+    position: relative;
+    bottom: -40px;
+    right: 80px;
+    margin: auto;
     text-align: center;
+    margin-left: 15px;
     padding: 20px;
-    margin:0 0 0 50px;
+    margin:0 1 0 50px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.price{
-    display: flex;
-    text-align: center;
-    padding: 20px;
-    margin:0 0 0 50px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 .circle {
     width: 100px;
