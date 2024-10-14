@@ -33,9 +33,7 @@ def forgot_password_code_page():
 
         verification_code = get_verification_code(code)
         if verification_code:
-            print(verification_code.__dict__)
             user = get_user_for_id(verification_code.user_id)
-            print(user)
             login_user(user)
             return redirect(url_for('fp.new_password_page'))
 
