@@ -16,7 +16,7 @@
     {% extends 'base.html' %}
      {% block content %}
     <div class="square">
-        <div class="label">Авторизация</div>
+        <div class="label">Введите код</div>
         <div class="label1" name="flash">
             {% with messages = get_flashed_messages() %}
               {% if messages %}
@@ -30,15 +30,10 @@
         </div>
         <form method="post">
             <div class="form-field">
-                <input type="text" placeholder="Логин" id="login" name="login" class="input-field" value="">
+
+                <input type="text" placeholder="Код" id="code" name="code" class="input-field" value="">
             </div>
-            <div class="form-field">
-                <input type="password" placeholder="Пароль" id="password" name="password" class="input-field" value="">
-            </div>
-            <a href="{{ url_for('fp.forgot_password_email_page') }}" class="forgot-password">забыли пароль?</a>
-            <input type="submit" class="button" value="Войти">
-            <div class="form-field"></div>
-            <p>нет аккаунта?<a href="{{ url_for('auth.register_page') }}" class="registration">Зарегистрироваться</a></p>
+            <input type="submit" class="button" value="Подтвердить">
         </form>
     </div>
     {% endblock %}
