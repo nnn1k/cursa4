@@ -76,6 +76,7 @@ body {
 
 .reklama {
     height: 200px;
+
     background-image: url('/static/img/red.jpg');
 }
 

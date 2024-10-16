@@ -4,9 +4,9 @@
     margin: 0;
     padding: 0;
 }
-body {
+
+body{
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -102,7 +102,7 @@ img {
     height: 600px;
     background-size: cover;
     background-position: center;
-    background-color: #ffffff;
+    background-color: #c7c7c7;
     position: absolute;
     background: linear-gradient(#435278, #E8E8E8);
     top: 50%;

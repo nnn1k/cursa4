@@ -1,0 +1,68 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    font-family: "Open Sans", sans-serif;
+}
+
+.centered-block{
+    display: grid;
+    padding: 40px;
+    gap: 30px 0px;
+    background: linear-gradient(#4660C5, #ababab);
+    justify-content: center;
+    align-content: start;
+    justify-items: center;
+    align-items: start;
+
+}
+
+.centered-content{
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4px;
+    width: 1471px;
+    height: 508px;
+    background-color: #489cfd;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.foto{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.button-sign-up {
+    text-align: center;
+    position: absolute;
+    background-color: #ca2c2c;
+    color: #fff;
+    padding: 15px 30px;
+    width: 200px;
+    top: 85%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.text-sport{
+    position: absolute;
+    font-weight: bold;
+    top: 10%;
+    left: 65%;
+    font-size: 35px;
+    width: 400px;
+}
+
+
+
