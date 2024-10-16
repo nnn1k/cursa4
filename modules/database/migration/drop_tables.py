@@ -7,6 +7,7 @@ def drop_tables():
     db.execute_query('DROP TABLE IF EXISTS coaches')
     db.execute_query('DROP TABLE IF EXISTS rooms')
     db.execute_query('DROP TABLE IF EXISTS services')
+    db.execute_query('DROP TABLE IF EXISTS verification_code')
     db.execute_query('DROP TABLE IF EXISTS reviews')
     db.execute_query('DROP TABLE IF EXISTS users')
 

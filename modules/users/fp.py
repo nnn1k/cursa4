@@ -13,7 +13,6 @@ def forgot_password_email_page():
         email = request.form.get('email')
 
         user = get_user_for_email(email)
-
         if user:
             code = get_random_code()
             message = f'''
@@ -22,6 +21,8 @@ def forgot_password_email_page():
             add_verification_code(user.id, code)
             post_mail(email, message)
             return redirect(url_for('fp.forgot_password_code_page'))
+        else:
+            flash('Нету пользователя с такой почтой')
 
     return render_template('auth/forgot_password/email.html', page_type='auth')
 

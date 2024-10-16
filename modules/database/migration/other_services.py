@@ -24,16 +24,16 @@ def create_other_services():
     ''')
 
     db.execute_query('''
-    create table sports_activities(
-      id int primary key identity(1, 1),
-      user_id int foreign key references users,
-      service_id int foreign key references services,
-      coach_id int foreign key references coaches,
-      rooms_id int foreign key references rooms,
-      time_start datetime,
-      time_end datetime,
-      price int
-    );
+        create table sports_activities(
+          id int primary key identity(1, 1),
+          user_id int foreign key references users,
+          service_id int foreign key references services,
+          coach_id int foreign key references coaches,
+          rooms_id int foreign key references rooms,
+          time_start datetime,
+          time_end datetime,
+          price int
+        );
     ''')
 
     print('other services created')

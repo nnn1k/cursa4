@@ -1,5 +1,5 @@
 from modules.database.db_class import db
-from modules.models.Verification_code import VerificationCode
+from modules.models.VerificationCode import VerificationCode
 def add_verification_code(user_id, code):
     db.execute_query('insert into verification_code (user_id, code) values (?, ?)', user_id, code)
 

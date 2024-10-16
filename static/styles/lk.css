@@ -1,173 +1,188 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    margin: 20px;
     justify-content: center;
-
-}
-#uploadButton {
-    background-color: #3429db;
-    justify-content: center;
-    color: white;
-    margin-top: 15px;
-    padding: 10px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-#uploadButton:hover {
-    background-color: #376bdd;
-}
-.title {
-    text-align: center;
-    padding: 30px;
-    background-color: rgb(236, 234, 234);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-}
-.title1 {
-    padding: 30px;
-    display: flex;
-    gap: 100px;
-}
-.inputImg {
-    text-align: center;
-    padding: 30px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.FIO {
-    text-align: center;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.cash {
-    height: 111px;
-    margin-top:30px;
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.cash li{
-    text-decoration: none;
-    list-style-type: none;
-    padding: 10px;
-}
-.cash a {
-    text-decoration: none;
-}
-.history {
-    margin: 30px;
-    display: flex;
-    justify-content: space-between;
-}
-.history-aboniment {
-    display: flex;
-    margin:0 50px 0 50px;
-}
-.imya {
-    text-align: center;
-    margin: auto;
-    padding: 20px;
-    width: 80px;
-    height: 15px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.data {
-    display: flex;
-    margin: auto;
-    text-align: center;
-    padding: 20px;
-    width: 35px;
-    height: 15px;
-    margin:0 1 0 50px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+.user-info{
+    background: whitesmoke;
+
 }
-.block {
-    justify-content: space-between;
-    text-align: center;
-    display: flex;
-    width: 400px;
-    height: 120px;
-    padding: 20px;
-    background-color: rgb(70, 68, 236);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.userform-container{
+    float: left;
+    width: 70%;
+    height: 300px;
+
 }
-.history-lesson {
-    display: flex;
-    margin:0 50px 0 50px;
+
+.userform-background{
+    height: 250px;
+    width: 700px;
+    margin: 50px;
+    background: linear-gradient(#435278,#E8E8E8);
 }
-.block1{
-    position: relative;
-    text-align: center;
-    display: flex;
-    width: 500px;
-    height: 120px;
-    padding: 20px;
-    background-color: rgb(70, 68, 236);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-#text-container {
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
-}
-.name-lesson {
+
+.background-user-photo {
     position: absolute;
-    right: 60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: yellow;
+    margin: 30px;
+}
+
+.user-photo{
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+
+.userform-info-background{
+    background: white;
+    height: 200px;
     width: 300px;
-    height: 20px;
-    padding: 20px;
-    margin:0 1 0 50px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    margin: 20px 0px 0px 300px;
 }
-.data-lesson {
-    position: relative;
-    bottom: -40px;
-    left: 187px;
-    margin: auto;
+
+.p-userform{
     text-align: center;
-    padding: 20px;
-    margin:0 1 0 50px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 8px;
 }
-.price {
-    position: relative;
-    bottom: -40px;
-    right: 80px;
-    margin: auto;
+
+.user-balance{
+    display: flex;
+    width: 30%;
+    height: 300px;
+}
+
+.background-balance{
+    padding-top: 30px;
     text-align: center;
-    margin-left: 15px;
-    padding: 20px;
-    margin:0 1 0 50px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 160px;
+    width: 200px;
+    margin: 80px;
+    background: linear-gradient(#435278,#E8E8E8);
+}
+.p-balance{
+    text-align: center;
+    padding: 8px;
+}
+
+.all-history{
+    display: flex;
+    text-align: center;
+}
+
+.h-aboniments{
+    float: left;
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.h-activities{
+    float: right;
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.one-aboniment{
+    width: 450px;
+    height: 200px;
+    background: #4660C5;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.one-activity{
+    width: 450px;
+    height: 200px;
+    background: #4660C5;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.circle-services {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background: yellow;
+    margin: 30px;
+}
+
+.service-img{
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.title-activity{
+    position: absolute;
+    background: white;
+    width: 220px;
+    height: 50px;
+    margin: 30px 0px 0px 180px;
+    padding: 10px;
 
 }
-.circle {
+
+.p-title-activity{
+    position: absolute;
+    text-align: center;
+    width: 90%;
+
+}
+
+
+
+.price-activity{
+    position: absolute;
+    background: white;
     width: 100px;
-    height: 100px;
-    margin-right: 30px;
-    border-radius: 110%;
-    display: flex;
-    justify-content: center;
+    height: 50px;
+    margin: 130px 0px 0px 180px;
+    padding: 10px;
+}
+
+.date-activity{
+    position: absolute;
+    background: white;
+    width: 100px;
+    height: 50px;
+    margin: 130px 0px 0px 300px;
+    padding: 10px;
+}
+.title-aboniment{
+    position: absolute;
+    background: white;
+    width: 220px;
+    height: 35px;
+    margin: 30px 0px 0px 180px;
+    padding: 5px;
+}
+.date-aboniment{
+    position: absolute;
+    background: white;
+    width: 220px;
+    height: 30px;
+    margin: 90px 0px 0px 180px;
+    padding: 5px;
+}
+
+.price-aboniment{
+    position: absolute;
+    background: white;
+    width: 220px;
+    height: 30px;
+    margin: 150px 0px 0px 180px;
+    padding: 5px;
 }
