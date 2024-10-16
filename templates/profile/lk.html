@@ -33,6 +33,7 @@
                 <p class="p-balance"> ВАШ БАЛАНС</p>
                 <p class="p-balance"> {{ current_user.balance }} рублей</p>
                 <p class="p-balance"> <a href=""> Пополнить </a></p>
+                <p class="p-balance"> <a href="{{ url_for('auth.logout') }}">выйти </a> </p>
             </div>
         </div>
      </div>
