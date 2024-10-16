@@ -7,6 +7,7 @@ def create_services():
           id int primary key identity(1, 1),
           name nvarchar(100) not null,
           description nvarchar(1000) not null,
+          photo_url nvarchar(100) not null
         );
     ''')
 
