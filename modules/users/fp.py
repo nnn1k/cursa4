@@ -37,6 +37,8 @@ def forgot_password_code_page():
             user = get_user_for_id(verification_code.user_id)
             login_user(user)
             return redirect(url_for('fp.new_password_page'))
+        else:
+            flash('Неправильный код')
 
     return render_template('auth/forgot_password/confirm.html', page_type='auth')
 
@@ -49,6 +51,6 @@ def new_password_page():
         if password == password2:
             user = update_password(current_user.id, password)
             drop_verification_code(user.id)
-            return redirect(url_for('closed_page'))
+            return redirect(url_for('profile.profile_page'))
 
     return render_template('/auth/forgot_password/forgot_password.html', page_type='auth')
