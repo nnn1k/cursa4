@@ -29,8 +29,9 @@ def add_photo(request, user):
         return redirect(request.url)
     photo = request.files.get('photo')
     if photo.filename == '':
-        flash('Нет выбранного файла')
-        return redirect(request.url)
+        if not user.photo_url:
+            return 'default.png'
+        return user.photo_url
     if photo:
         filename = f"{user.login}.{photo.filename.rsplit('.', 1)[1]}"
         photo.save(join(current_app.config['UPLOAD_FOLDER'], filename))

@@ -8,12 +8,7 @@
 <body>
     {% extends 'base.html' %}
     {% block content %}
-    	{% if current_user.is_authenticated  %}
-        <a href="{{ url_for('closed_page') }}"> Closed</a>
-    {% else %}
-        <a href="{{ url_for('auth.login_page') }}"> Login</a>
-    {% endif %}
-        <a href="{{ url_for('test_photo') }}"> photo</a>
+
         <div class="centered-block">
         <img src="static/img/background.jpg" alt="Картинка" class="foto">
             <div class="centered-content">

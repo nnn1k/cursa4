@@ -20,5 +20,11 @@ def userform_page():
         if type(filename) != str:
             return filename
         filling_form(user_id, name, surname, email, phone, filename)
-        return redirect(url_for('closed_page'))
-    return render_template('auth/userform.html', page_type='auth', user=user)
+        return redirect(url_for('profile.profile_page'))
+    return render_template('profile/userform.html', page_type='auth', user=user)
+
+
+@profile.route('/', methods=['GET', 'POST'])
+@login_required
+def profile_page():
+    return render_template('profile/lk.html', page_type='profile')

@@ -30,7 +30,7 @@ def start_page():
 @login_required
 def closed_page():
     print(f'current_user: {current_user.__dict__}')
-    return render_template('closed.html')
+    return render_template('other/closed.html')
 
 @app.route('/test_photo', methods=['GET', 'POST'])
 def test_photo():
@@ -49,7 +49,7 @@ def test_photo():
 
         return redirect(url_for('download_file', name=filename))
 
-    return render_template('test_photo.html')
+    return render_template('other/test_photo.html')
 
 @app.route('/uploads/<name>')
 def download_file(name):
@@ -70,7 +70,7 @@ def redirect_to_signin(response):
 
 @app.route('/error_500', methods=['GET', 'POST'])
 def error_500():
-    return render_template('error_500.html')
+    return render_template('other/error_500.html')
 
 @manager.user_loader
 def load_user(user_id):

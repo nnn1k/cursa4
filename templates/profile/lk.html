@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="/static/styles/lk.css">
+</head>
+
+<body>
+    {% extends 'base.html' %}
+     {% block content %}
+     <div class="user-info">
+        <div class="userform-container">
+            <div class="userform-background">
+                <div class="background-user-photo">
+                    <img class="user-photo" src="/static/img/photos/{{ current_user.photo_url }}">
+                </div>
+
+                <div class="userform-info">
+                    <div class="userform-info-background">
+                        <p class="p-userform">{{ current_user.name }}</p>
+                        <p class="p-userform">{{ current_user.surname }}</p>
+                        <p class="p-userform">{{ current_user.email }}</p>
+                        <p class="p-userform">{{ current_user.phone }}</p>
+                        <p class="p-userform"> <a href="{{ url_for('profile.userform_page') }}"> Изменить данные </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-balance">
+            <div class="background-balance">
+                <p class="p-balance"> ВАШ БАЛАНС</p>
+                <p class="p-balance"> {{ current_user.balance }} рублей</p>
+                <p class="p-balance"> <a href=""> Пополнить </a></p>
+            </div>
+        </div>
+     </div>
+     <div class="all-history">
+        <div class="h-aboniments">
+            <h1> История абонементов</h1><br>
+            <div class="one-aboniment">
+                <div class="circle-services">
+                    <img class="service-img" src="/static/img/photos/default.png">
+                </div>
+                <div class="title-aboniment">
+                    <p class="p-title-aboniment"> Название </p>
+                </div>
+                <div class="date-aboniment">
+                    <p class="p-date-aboniment"> дата начала - дата конца  </p>
+                </div>
+                <div class="price-aboniment">
+                    <p class="p-price-aboniment"> цена  </p>
+                </div>
+            </div>
+            <div class="one-aboniment">
+                <div class="circle-services">
+                    <img class="service-img" src="/static/img/photos/default.png">
+                </div>
+                <div class="title-aboniment">
+                    <p class="p-title-aboniment"> Название </p>
+                </div>
+                <div class="date-aboniment">
+                    <p class="p-date-aboniment"> дата начала - дата конца  </p>
+                </div>
+                <div class="price-aboniment">
+                    <p class="p-price-aboniment"> цена </p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="h-activities">
+            <h1> История занятий</h1><br>
+            <div class="one-activity">
+                <div class="circle-services">
+                    <img class="service-img" src="/static/img/photos/default.png">
+                </div>
+                <div class="title-activity">
+                    <p class="p-title-activity"> Название </p>
+                </div>
+                <div class="price-activity">
+                    <p class="p-price-activity"> Цена </p>
+                </div>
+                <div class="date-activity">
+                    <p class="p-date-activity"> Дата </p>
+                </div>
+            </div>
+        </div>
+     </div>
+    {% endblock %}
+
+</body>
+
+</html>
