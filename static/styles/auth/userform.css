@@ -59,8 +59,6 @@ body {
 
 }
 
-
-
 .button {
     background-color: #4660C5;
     color: #fff;
@@ -72,14 +70,31 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+.upload-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4660c5;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
 .forgot-password {
     font-size: 14px;
     color: #6d8fec;
     text-decoration: none;
     float: right;
 }
-
-
 
 .registration {
     font-size: 14px;

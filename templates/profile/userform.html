@@ -33,7 +33,8 @@
 
         <form class="pole"  method="post" enctype="multipart/form-data">
             <div class="form-field">
-                <input type="file" name="photo" id='photo' class="button" value="Добавить фото">
+                <label for="file-upload" class="upload-button">Добавить фотографию</label>
+                <input type="file" id="file-upload" accept="image/*">
             </div>
             <div class="form-field">
                 <input type="text" placeholder="Имя" id="name" name="name" class="input-field" value="{{ user.name or '' }}">
