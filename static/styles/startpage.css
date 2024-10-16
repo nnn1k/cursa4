@@ -28,15 +28,9 @@ body {
     border-radius: 20px;
 }
 
-.watermelon{
-    position: absolute;
-    left: 63%;
-    top: 70%;
-}
-
 .football{
     position: absolute;
-    width: 600px;
+    width: 584px;
     left: 50%;
     top: -0%;
 }
@@ -85,8 +79,6 @@ img {
     width: 100%;
     height: 600px;
 }
-
-
 
 .info{
     width: 1200px;
