@@ -29,25 +29,24 @@
               {% endif %}
             {% endwith %}
         </div>
-        <form action="login" method="post">
-        </form>
-        
-        <form class="pole"  method="post">
+
+
+        <form class="pole"  method="post" enctype="multipart/form-data">
             <div class="form-field">
-                <button class="button" type="submit">Добавить фото</button>
-                <input name="myFile" type="file" class="addfile">
+                <input type="file" name="photo" id='photo' class="button" value="Добавить фото">
             </div>
             <div class="form-field">
-                <input type="text" placeholder="Имя" id="name" name="name" class="input-field" value="{{ user.name }}">
+                <input type="text" placeholder="Имя" id="name" name="name" class="input-field" value="{{ user.name or '' }}">
             </div>
             <div class="form-field">
-                <input type="text" placeholder="Фамилия" id="surname" name="surname" class="input-field" value="{{ user.surname }}">
+                <input type="text" placeholder="Фамилия" id="surname" name="surname" class="input-field" value="{{ user.surname or ''}}">
             </div>
             <div class="form-field">
-                <input type="E-mail" placeholder="E-mail" id="email" name="email" class="input-field" value="{{ user.email }}">
+
+                <input type="Email" placeholder="E-mail" id="email" name="email" class="input-field" value="{{ user.email or ''}}">
             </div>
             <div class="form-field">
-                <input type="Text" placeholder="Телефон" id="phone" name="phone" class="input-field" value="{{ user.phone }}">
+                <input type="Text" placeholder="Телефон" id="phone" name="phone" class="input-field" value="{{ user.phone or '' }}">
             </div>
             <input type="submit" class="button" value="Продолжить">
             <div class="form-field"></div>

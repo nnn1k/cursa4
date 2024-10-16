@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    justify-content: center;
+}
+
+
+
+.user-info{
+    background: whitesmoke;
+
+}
+
+.userform-container{
+    float: left;
+    width: 70%;
+    height: 300px;
+
+}
+
+.userform-background{
+    height: 250px;
+    width: 700px;
+    margin: 50px;
+    background: linear-gradient(#435278,#E8E8E8);
+}
+
+.background-user-photo {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: yellow;
+    margin: 30px;
+}
+
+.user-photo{
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+
+.userform-info-background{
+    background: white;
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    margin: 20px 0px 0px 300px;
+}
+
+.p-userform{
+    text-align: center;
+    padding: 8px;
+}
+
+.user-balance{
+    display: flex;
+    width: 30%;
+    height: 300px;
+}
+
+.background-balance{
+    padding-top: 30px;
+    text-align: center;
+    height: 160px;
+    width: 200px;
+    margin: 80px;
+    background: linear-gradient(#435278,#E8E8E8);
+}
+.p-balance{
+    text-align: center;
+    padding: 8px;
+}
+
+.all-history{
+    display: flex;
+    text-align: center;
+}
+
+.h-aboniments{
+    float: left;
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.h-activities{
+    float: right;
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.one-aboniment{
+    width: 450px;
+    height: 200px;
+    background: #4660C5;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.one-activity{
+    width: 450px;
+    height: 200px;
+    background: #4660C5;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.circle-services {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background: yellow;
+    margin: 30px;
+}
+
+.service-img{
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.title-activity{
+    position: absolute;
+    background: white;
+    width: 220px;
+    height: 50px;
+    margin: 30px 0px 0px 180px;
+    padding: 10px;
+
+}
+
+.p-title-activity{
+    position: absolute;
+    text-align: center;
+    width: 90%;
+
+}
+
+
+
+.price-activity{
+    position: absolute;
+    background: white;
+    width: 100px;
+    height: 50px;
+    margin: 130px 0px 0px 180px;
+    padding: 10px;
+}
+
+.date-activity{
+    position: absolute;
+    background: white;
+    width: 100px;
+    height: 50px;
+    margin: 130px 0px 0px 300px;
+    padding: 10px;
+}
+.title-aboniment{
+    position: absolute;
+    background: white;
+    width: 220px;
+    height: 35px;
+    margin: 30px 0px 0px 180px;
+    padding: 5px;
+}
+.date-aboniment{
+    position: absolute;
+    background: white;
+    width: 220px;
+    height: 30px;
+    margin: 90px 0px 0px 180px;
+    padding: 5px;
+}
+
+.price-aboniment{
+    position: absolute;
+    background: white;
+    width: 220px;
+    height: 30px;
+    margin: 150px 0px 0px 180px;
+    padding: 5px;
+}

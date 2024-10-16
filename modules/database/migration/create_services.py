@@ -27,9 +27,10 @@ def create_services():
       id int primary key identity(1, 1),
       name nvarchar(100) not null,
       surname nvarchar(100),
+      date_of_employment date,
       birthday date,
       service_id int foreign key references services,
-      rooms_id int foreign key references rooms
+      room_id int foreign key references rooms
     );
     ''')
     print('services, rooms and coaches created')

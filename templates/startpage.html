@@ -2,21 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/styles/startpage.css">
     <title>startpage</title>
 </head>
 <body>
     {% extends 'base.html' %}
     {% block content %}
-    	{% if current_user.is_authenticated  %}
-        <a href="{{ url_for('closed_page') }}"> Closed</a>
 
-    {% else %}
-        <a href="{{ url_for('auth.login_page') }}"> Login</a>
-    {% endif %}
-        <a href="{{ url_for('test_photo') }}"> photo</a>
-
-
-
+        <div class="centered-block">
+        <img src="static/img/background.jpg" alt="Картинка" class="foto">
+            <div class="centered-content">
+                <img src="static/img/football.png" alt="" class="football">
+                <img src="static/img/watermelon.png" alt="" class="watermelon">
+                <div class="text2">Лазурный<p>Лазурный спорткомплекс — зарядись энергией лета!</p>
+                </div>
+                <a href="./anketa.html" class="button1">Посмотреть услуги</a>
+            </div>
+        </div>
+        <div class="info1">
+            <div class="info">
+                <div class="text3">Спорткомплекс «Лазурный» — это идеальное место для активного отдыха и занятия спортом.
+                    Здесь вы найдёте разнообразные спортивные площадки, тренажёрный зал, бассейн и многое другое.
+                    В комплексе регулярно проводятся соревнования и мастер-классы с опытными тренерами!</div>
+                <div class="text4">5 <p>Зон с различными направлениями</p>
+                </div>
+                <div class="text5">5 <p>Профессиональных тренеров</p>
+                </div>
+                <div class="text6">1000+ <p>Отзывов</p>
+                </div>
+            </div>
+        </div>
+        <div class="info1">
+            <div class="info">
+                <div class="text3">Что вы получите после от нас</div>
+                <div class="text8">Гарантия качества тренеровок</div>
+                <div class="text9">Найдете свое призвание</div>
+                <div class="text10">Разработаем индивидуальные программы</div>
+            </div>
+        </div>
     {% endblock %}
 </body>
 </html>

@@ -8,6 +8,8 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     font-family: "Open Sans", sans-serif;
+    min-height: 100%;
+    position: relative;
 }
 
 
@@ -63,6 +65,7 @@ body {
 }
 
 
+
 .footer p {
     text-align: left;
 }
@@ -115,5 +118,5 @@ body {
 }
 
 .content{
-    height: 100vh;
+    height: 100%;
 }
