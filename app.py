@@ -25,37 +25,17 @@ manager = LoginManager(app)
 def start_page():
     return render_template('startpage.html')
 
+@app.route('/info', methods=['GET', 'POST'])
+def info_page():
+    return render_template('info.html')
 
-@app.route('/closed_page', methods=['GET', 'POST'])
-@login_required
-def closed_page():
-    print(f'current_user: {current_user.__dict__}')
-    return render_template('other/closed.html')
+@app.route('/services', methods=['GET', 'POST'])
+def services_page():
+    return render_template('services.html')
 
-@app.route('/test_photo', methods=['GET', 'POST'])
-def test_photo():
-    if request.method == 'POST':
-        if 'photo' not in request.files:
-            flash('Не могу прочитать файл')
-            return redirect(request.url)
-        photo = request.files.get('photo')
-        if photo.filename == '':
-            flash('Нет выбранного файла')
-            return redirect(request.url)
-        if photo:
-            type = photo.filename.rsplit('.', 1)[1]
-            filename = f'test.{type}'
-            photo.save(join(app.config['UPLOAD_FOLDER'], filename))
-
-        return redirect(url_for('download_file', name=filename))
-
-    return render_template('other/test_photo.html')
-
-@app.route('/uploads/<name>')
-def download_file(name):
-    return send_from_directory(app.config["UPLOAD_FOLDER"], name)
-
-# обработка запросов
+@app.route('/reviews', methods=['GET', 'POST'])
+def reviews_page():
+    return render_template('reviews.html')
 
 @app.after_request
 def redirect_to_signin(response):
@@ -66,11 +46,6 @@ def redirect_to_signin(response):
     #return redirect(url_for('error_500'))
 
     return response
-
-
-@app.route('/error_500', methods=['GET', 'POST'])
-def error_500():
-    return render_template('other/error_500.html')
 
 @manager.user_loader
 def load_user(user_id):

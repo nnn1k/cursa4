@@ -17,9 +17,10 @@
         <div class="logo"><a href="{{ url_for('start_page') }}"> ЛАЗУРНЫЙ</a></div>
         <ul>
 {#            <li><a href="{{ url_for('start_page') }}">Главная</a></li>#}
-            <li><a href="#">Список услуг</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="{{ url_for('profile.profile_page') }}">Личный кабинет</a></li>
+            <li><a href="{{ url_for('services_page') }}">Список услуг</a></li>
+            <li><a href="{{ url_for('info_page') }}">О нас</a></li>
+            <li><a href="{{ url_for('reviews_page') }}">Отзывы</a></li>
+            <li><a href="{{ url_for('profile.profile_page') }}"> Личный кабинет</a></li>
         </ul>
         <div class="phone">+7 000 000 00 00</div>
     </header>
