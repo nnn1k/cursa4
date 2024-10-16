@@ -23,21 +23,15 @@ manager = LoginManager(app)
 
 @app.route('/')
 def start_page():
-    return render_template('startpage.html')
+    return render_template('startpages/startpage.html')
 
 @app.route('/info', methods=['GET', 'POST'])
 def info_page():
-    return render_template('info.html')
+    return render_template('startpages/info.html')
 
 @app.route('/services', methods=['GET', 'POST'])
 def services_page():
-    return render_template('services.html')
-
-@app.route('/reviews', methods=['GET', 'POST'])
-def reviews_page():
-    return render_template('reviews.html')
-
-
+    return render_template('startpages/services.html')
 
 @app.after_request
 def redirect_to_signin(response):
