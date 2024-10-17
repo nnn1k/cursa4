@@ -8,33 +8,77 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
     <title>main</title>
 </head>
 
 <body>
 
-    {% extends 'base.html' %}
-    {% block content %}
+{% extends 'base.html' %}
+{% block content %}
     <div class="centered-block">
         <img src="/static/img/background.jpg" alt="Картинка" class="foto">
         <div class="centered-content">
             <img src="/static/img/football.png" alt="" class="football">
             <div class="text2">Лазурный<p>Лазурный спорткомплекс — зарядись энергией лета!</p>
+
             </div>
             <a href="#" class="button-review">Отзывы</a>
             <a href="#" class="button-contact">Контакты</a>
         </div>
     </div>
-        <div class="block-history">
-            <div class="info">
-                <div class="text3">История спорткомплекса «Лазурный» началась в далёком 1967 году, когда в центре города Кемерово был построен старый бассейн.
-                    В 2005 году бассейн был капитально отремонтирован и модернизирован, после чего открылся как спорткомплекс «Лазурный».
-                    В 2007 году в нём появился теннисный центр, состоящий из четырёх полноразмерных теннисных кортов и двух кортов под открытым небом.
+    <div class="block-history">
+        <div class="info">
+            <div class="text3">История спорткомплекса «Лазурный» началась в далёком 1967 году, когда в центре города
+                Кемерово был построен старый бассейн.
+                В 2005 году бассейн был капитально отремонтирован и модернизирован, после чего открылся как
+                спорткомплекс «Лазурный».
+                В 2007 году в нём появился теннисный центр, состоящий из четырёх полноразмерных теннисных кортов и двух
+                кортов под открытым небом.
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="review-write">
+            <a href="#" class="plase-review">Оставить отзыв</a>
+            <div class="Topic-Reviews">
+                <textarea class="review-pole1" id="textInput" placeholder="Введите вашу тему отзыва"></textarea>
+            </div>
+
+            <div class="review-text">
+                <textarea class="review-pole2" id="textInput" placeholder="Введите ваш отзыв"></textarea>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container2">
+        <div class="review-complite">
+            <div class="review-background1">
+                <div class="FIO">
+                    <p>Суворов Константин</p>
+                </div>
+                <div class="date">
+                    <p>11.09.2005</p>
                 </div>
             </div>
         </div>
-        {% endblock %}
+        <div class="review-complite">
+            <div class="review-background2">
+                <div class="review-title">
+                    <p>отзвыфавыфлпроыфвыжрпрыфродажпродфаы</p>
+                </div>
+                <div class="user-review">
+                    <p>1фтоыфаппфаырлдфпыавролфпаролролваыролдфродапл</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
 </body>
 
 </html>
