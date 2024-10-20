@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, url_for, send_from_directory
-from flask_login import LoginManager, current_user, login_required
+from flask import Flask, render_template, request, url_for
+from flask_login import LoginManager, current_user
 from modules.database.queries.user_queries import *
 from modules.users.auth import auth
 from modules.users.fp import fp
 from modules.users.profile import profile
 from modules.func.utils import *
+from modules.database.queries.review_queries import *
 
 UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'D:\projects\python\kursa4\static\img\photos')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -27,7 +28,28 @@ def start_page():
 
 @app.route('/info', methods=['GET', 'POST'])
 def info_page():
-    return render_template('startpages/info.html')
+    current_user_review = get_review_for_user_id(current_user.id)
+    if request.method == 'POST':
+        title = request.form.get('title')
+        description = request.form.get('description')
+        submit = request.form.get('submit-review')
+
+        match submit:
+            case 'Удалить отзыв':
+                delete_review_for_user_id(current_user.id)
+            case 'Оставить отзыв':
+                add_review(title, description, current_user.id)
+            case 'Изменить отзыв':
+                update_review_for_user_id(title, description, current_user.id)
+
+        return redirect(url_for('info_page'))
+    
+    reviews = get_reviews()
+
+    for review in reviews:
+        review.create_at = review.create_at.strftime("%Y-%m-%d %H:%M:%S")
+
+    return render_template('startpages/info.html', reviews=reviews, current_user_review=current_user_review)
 
 @app.route('/services', methods=['GET', 'POST'])
 def services_page():
@@ -39,7 +61,7 @@ def redirect_to_signin(response):
         return redirect(url_for('auth.login_page') + '?next=' + request.url)
 
     #if response.status_code == 500:
-    #return redirect(url_for('error_500'))
+    #return redirect(url_for('test.error_500'))
 
     return response
 

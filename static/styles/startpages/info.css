@@ -178,6 +178,21 @@ img {
     cursor: pointer;
 }
 
+.plase-review-delete {
+    position: absolute;
+    text-align: center;
+    background-color: #ca2c2c;
+    color: #fff;
+    padding: 15px 30px;
+    width: 200px;
+    top: 90%;
+    left: 59.5%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .container2 {
   display: grid;
   background-color: #afafaf;
@@ -197,7 +212,6 @@ img {
 
 .review-title{
     font-size: 20px;
-    text-align: center;
     margin:30px;
     padding: 20px;
     width: 1000px;

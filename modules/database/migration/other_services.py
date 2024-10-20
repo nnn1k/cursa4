@@ -18,8 +18,8 @@ def create_other_services():
           user_id int foreign key references users,
           service_id int foreign key references services,
           subscription_type_id int foreign key references subscriptions_types,
-          date_start date default getutcdate(),
-          date_end date default getutcdate()
+          date_start date default dateadd(hour, 3, getutcdate()),
+          date_end date default dateadd(hour, 3, getutcdate())
         );
     ''')
 

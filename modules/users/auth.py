@@ -5,6 +5,7 @@ from modules.func.utils import *
 
 auth = Blueprint('auth', __name__, template_folder='templates', static_folder='static')
 
+
 @auth.route('/login', methods=['GET', 'POST'])
 def login_page():
     if current_user.is_authenticated:
@@ -41,8 +42,8 @@ def register_page():
         else:
             user = get_user_for_login(login)
             if not user:
-                add_user(login, password)
-                login_user(get_user_for_login(login))
+                new_user = add_user(login, password)
+                login_user(new_user)
                 return redirect(url_for('profile.userform_page'))
             else:
                 flash('Пользователь уже существует')

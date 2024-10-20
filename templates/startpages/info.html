@@ -38,43 +38,59 @@
             </div>
         </div>
     </div>
+    {% if current_user.is_active %}
     <div class="container">
+        <form method="post">
         <div class="review-write">
-            <a href="#" class="plase-review">Оставить отзыв</a>
             <div class="Topic-Reviews">
-                <textarea class="review-pole1" id="textInput" placeholder="Введите вашу тему отзыва"></textarea>
+                <input class="review-pole1" id="textInput" name="title" placeholder="Введите вашу тему отзыва" value="{{ current_user_review.title }}">
             </div>
-
             <div class="review-text">
-                <textarea class="review-pole2" id="textInput" placeholder="Введите ваш отзыв"></textarea>
+                <input class="review-pole2" id="textInput" name="description" placeholder="Введите ваш отзыв" value="{{ current_user_review.description }}">
             </div>
+            {% if current_user_review %}
+                <input type="submit" class="plase-review" value="Изменить отзыв" name="submit-review">
+                <input type="submit" class="plase-review-delete" value="Удалить отзыв" name="submit-review">
+            {% else %}
+                <input type="submit" class="plase-review" value="Оставить отзыв" name="submit-review">
+            {% endif %}
+
         </div>
+         </form>
     </div>
+    {% else %}
+    <div>
+        <h1 style="text-align: center"> Войдите что бы оставить свой отзыв <a href="{{ url_for('profile.profile_page') }}"> Войти </a></h1>
+    </div>
+    {% endif %}
 
 
-
+    {% for review in reviews %}
     <div class="container2">
         <div class="review-complite">
             <div class="review-background1">
                 <div class="FIO">
-                    <p>Суворов Константин</p>
+                    <p>{{ review.user_name }} </p>
+                    <p>{{ review.user_surname }} </p>
+                    <p>{{ review.user_id }} </p>
                 </div>
                 <div class="date">
-                    <p>11.09.2005</p>
+                    <p>{{ review.create_at }}</p>
                 </div>
             </div>
         </div>
         <div class="review-complite">
             <div class="review-background2">
                 <div class="review-title">
-                    <p>отзвыфавыфлпроыфвыжрпрыфродажпродфаы</p>
+                    <p>{{ review.title }}</p>
                 </div>
                 <div class="user-review">
-                    <p>1фтоыфаппфаырлдфпыавролфпаролролваыролдфродапл</p>
+                    <p>{{ review.description }}</p>
                 </div>
             </div>
         </div>
     </div>
+    {% endfor %}
 
 
 
