@@ -28,7 +28,10 @@ def start_page():
 
 @app.route('/info', methods=['GET', 'POST'])
 def info_page():
-    current_user_review = get_review_for_user_id(current_user.id)
+    if current_user.is_authenticated:
+        current_user_review = get_review_for_user_id(current_user.id)
+    else:
+        current_user_review = None
     if request.method == 'POST':
         title = request.form.get('title')
         description = request.form.get('description')
