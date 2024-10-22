@@ -22,7 +22,12 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.logo-foto{
+    width: 150px;
+}
+
 .header .logo {
+    display: flex;
     font-size: 24px;
     font-weight: bold;
     margin-right: 20px;
