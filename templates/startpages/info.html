@@ -64,6 +64,9 @@
     </div>
     {% endif %}
 
+    {% if not reviews %}
+        <p> Отзывов пока нет...</p>
+    {% else %}
 
     {% for review in reviews %}
     <div class="container2">
@@ -91,6 +94,7 @@
         </div>
     </div>
     {% endfor %}
+    {% endif %}
 
 
 
