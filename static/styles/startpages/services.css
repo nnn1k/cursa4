@@ -38,6 +38,9 @@ body{
     top: 50%;
     left: 30%;
     transform: translate(-50%, -50%);
+    width: 800px;
+    height: 450px;
+    border-radius: 50px;
 }
 
 .button-sign-up {

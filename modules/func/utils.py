@@ -36,3 +36,9 @@ def add_photo(request, user):
         filename = f"{user.login}.{photo.filename.rsplit('.', 1)[1]}"
         photo.save(join(current_app.config['UPLOAD_FOLDER'], filename))
         return filename
+
+def create_cls_object(res, cls):
+    if res:
+        return cls(*res)
+    else:
+        return None

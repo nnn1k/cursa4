@@ -6,6 +6,7 @@ from modules.users.fp import fp
 from modules.users.profile import profile
 from modules.func.utils import *
 from modules.database.queries.review_queries import *
+from modules.database.queries.services_queries import *
 
 UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'D:\projects\python\kursa4\static\img\photos')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -56,7 +57,8 @@ def info_page():
 
 @app.route('/services', methods=['GET', 'POST'])
 def services_page():
-    return render_template('startpages/services.html')
+    services = select_all_services()
+    return render_template('startpages/services.html', services=services)
 
 @app.after_request
 def redirect_to_signin(response):

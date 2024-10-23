@@ -16,12 +16,15 @@
 
     {% extends 'other/base.html' %}
     {% block content %}
+
     <div class="centered-block">
+        {% for service in services %}
         <div class="centered-content">
-            <img src="/static/img/services-photo/football-pole.png" alt="Картинка" class="foto">
-            <div class="text-sport">Футбольное поле</div>
+            <img src="/static/img/services-photo/{{ service.photo_url }}" alt="Картинка" class="foto">
+            <div class="text-sport">{{ service.name }}</div>
                 <a href="#" class="button-sign-up">Записаться</a>
         </div>
+        {% endfor %}
     </div>
 
     {% endblock %}
