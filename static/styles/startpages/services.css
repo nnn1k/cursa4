@@ -61,11 +61,16 @@ body{
 .text-sport{
     position: absolute;
     font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
     top: 10%;
     left: 65%;
     font-size: 35px;
     width: 400px;
 }
 
-
+.text-sport p{
+    font-weight: lighter;
+    font-size: 20px;
+}
 

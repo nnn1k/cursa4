@@ -21,7 +21,8 @@
         {% for service in services %}
         <div class="centered-content">
             <img src="/static/img/services-photo/{{ service.photo_url }}" alt="Картинка" class="foto">
-            <div class="text-sport">{{ service.name }}</div>
+            <div class="text-sport">{{ service.name }}
+                <p>{{ service.description }}</p></div>
                 <a href="#" class="button-sign-up">Записаться</a>
         </div>
         {% endfor %}

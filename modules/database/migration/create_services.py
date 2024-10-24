@@ -5,23 +5,23 @@ def create_services():
     db.execute_query('''
         create table services(
           id int primary key identity(1, 1),
-          name nvarchar(100) not null,
-          description nvarchar(1000) not null,
-          photo_url nvarchar(100) not null
+          name nvarchar(100),
+          description nvarchar(1000),
+          photo_url nvarchar(100)
         );
     ''')
 
     db.execute_query('''
     insert into services (name, description, photo_url) values
-    ('Football', 'описание', 'football-pole.png'),
-    ('Voleyball', 'описание', 'Volleyball.png'),
-    ('Diving', 'описание', 'pool.png'),
-    ('hokkey', 'описание', 'hokkey.png'),
-    ('gym', 'описание', 'gym.png'),
-    ('Shooting', 'описание', 'shooting.png'),
-    ('gymnastic', 'описание', 'gymnastic.jpg'),
-    ('judo', 'описание', 'judo.jpg'),
-    ('basketball', 'описание', 'basketball.jpg')
+    ('Football', 'футбол', 'football-pole.png'),
+    ('Voleyball', 'волейбол', 'Volleyball.png'),
+    ('Diving', 'плавание', 'pool.png'),
+    ('hokkey', 'хоккей', 'hokkey.png'),
+    ('gym', 'зал', 'gym.png'),
+    ('Shooting', 'стрельба', 'shooting.png'),
+    ('gymnastic', 'гимнастика', 'gymnastic.jpg'),
+    ('judo', 'дзюдо', 'judo.jpg'),
+    ('баскетбол', 'описание', 'basketball.jpg')
     ''')
 
     db.execute_query('''
