@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, url_for
 from flask_login import LoginManager, current_user
 from modules.database.queries.user_queries import *
+from modules.services.services import services
 from modules.users.auth import auth
 from modules.users.fp import fp
 from modules.users.profile import profile
@@ -19,6 +20,7 @@ app.config['SECRET_KEY'] = 'secretkeyyyyyyyy'
 app.register_blueprint(auth, url_prefix='/auth')
 app.register_blueprint(fp, url_prefix='/auth/forgot_password')
 app.register_blueprint(profile, url_prefix='/profile')
+app.register_blueprint(services, url_prefix='/services')
 
 manager = LoginManager(app)
 
@@ -55,10 +57,7 @@ def info_page():
 
     return render_template('startpages/info.html', reviews=reviews, current_user_review=current_user_review)
 
-@app.route('/services', methods=['GET', 'POST'])
-def services_page():
-    services = select_all_services()
-    return render_template('startpages/services.html', services=services)
+
 
 @app.after_request
 def redirect_to_signin(response):
