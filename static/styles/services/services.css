@@ -74,3 +74,11 @@ body{
     font-size: 18px;
 }
 
+.services-price{
+    position: absolute;
+    font-size: 23px;
+    top: 85%;
+    left: 68.5%;
+    transform: translate(-50%, -50%);
+}
+

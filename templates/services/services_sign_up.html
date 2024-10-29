@@ -17,17 +17,7 @@
     {% extends 'other/base.html' %}
     {% block content %}
 
-    <div class="centered-block">
-        {% for service in services %}
-        <div class="centered-content">
-            <img src="/static/img/services-photo/{{ service.photo_url }}" alt="Картинка" class="foto">
-            <div class="text-sport">{{ service.name }}
-                <p>{{ service.description }}</p></div>
-               <div class="services-price"><p>ЦЕНА...</p></div>
-                <a href="#" class="button-sign-up">Записаться</a>
-        </div>
-        {% endfor %}
-    </div>
+
 
     {% endblock %}
 </body>
