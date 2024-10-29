@@ -24,7 +24,7 @@
             <div class="text-sport">{{ service.name }}
                 <p>{{ service.description }}</p></div>
                <div class="services-price"><p>ЦЕНА...</p></div>
-                <a href="#" class="button-sign-up">Записаться</a>
+                <a href="{{ url_for('services.services_signup_page') }}" class="button-sign-up">Записаться</a>
         </div>
         {% endfor %}
     </div>
