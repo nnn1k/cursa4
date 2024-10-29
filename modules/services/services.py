@@ -10,3 +10,7 @@ services = Blueprint('services', __name__, template_folder='templates', static_f
 def services_page():
     services = select_all_services()
     return render_template('/services/services.html', services=services)
+
+@services.route('/signup', methods=['GET', 'POST'])
+def services_signup_page():
+    return render_template('services/services_sign_up.html')
