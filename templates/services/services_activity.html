@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/services/services_activity.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <title>main</title>
+</head>
+
+<body>
+
+    {% extends 'other/base.html' %}
+    {% block content %}
+        <div class="centered-block">
+            <div class="centered-content">
+                <img src="/static/img/services-photo/{{ service.photo_url }}" alt="Картинка" class="foto">
+                <form method="post">
+                <select id="dateSelect" name="date" class="date-select">
+                    <option value="{{ dates[0] }}">-- Выберите дату --</option>
+                    {% for date in dates %}
+                     <option value="{{ date }}">{{ date }}</option>
+                {% endfor %}
+                </select>
+
+                <select id="timeSelect" name="time" class="time-select">
+                    <option value="{{ times[0] }}">-- Выберите время --</option>
+                    {% for time in times %}
+                     <option value="{{ time }}">{{ time }}</option>
+                {% endfor %}
+                </select>
+
+                <select id="roomSelect" name="room" class="room-select">
+                    <option value="{{ rooms[0].id }}">-- Выберите зал --</option>
+                    {% for room in rooms %}
+                     <option value="{{ room.id }}">{{ room.name }}</option>
+                {% endfor %}
+                </select>
+                <input type="submit" class="button-sign-up" value="Записаться">
+                </form>
+
+                <a href="{{ url_for('services.services_page') }}">обратно</a>
+            </div>
+
+
+        </div>
+
+    {% endblock %}
+</body>
+
+</html>

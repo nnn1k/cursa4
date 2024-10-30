@@ -29,9 +29,9 @@ def create_other_services():
           user_id int foreign key references users,
           service_id int foreign key references services,
           coach_id int foreign key references coaches,
-          rooms_id int foreign key references rooms,
-          time_start datetime,
-          time_end datetime,
+          room_id int foreign key references rooms,
+          date date,
+          time time,
           price int
         );
     ''')

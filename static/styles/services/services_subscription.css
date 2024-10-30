@@ -1,0 +1,83 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+
+    font-family: Arial, sans-serif;
+    font-family: "Open Sans", sans-serif;
+}
+
+.centered-block{
+    display: grid;
+    padding: 40px;
+    gap: 30px 0px;
+    background: linear-gradient(#4660C5, #ababab);
+    justify-content: center;
+    align-content: start;
+    justify-items: center;
+    align-items: start;
+
+}
+
+.centered-content{
+    position: relative;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4px;
+    width: 1200px;
+    height: 800px;
+    background-color: #489cfd;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.foto{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 450px;
+    border-radius: 50px;
+}
+
+.button-sign-up {
+    text-align: center;
+    position: absolute;
+    background-color: #ca2c2c;
+    color: #fff;
+    padding: 15px 30px;
+    width: 200px;
+    top: 80%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.date-select{
+    position: absolute;
+    width: 150px;
+    top: 80%;
+    left: 20%;
+}
+
+.time-select{
+position: absolute;
+    width: 150px;
+    top: 80%;
+    left: 35%;
+}
+
+.room-select{
+position: absolute;
+    width: 150px;
+    top: 80%;
+    left: 50%;
+}

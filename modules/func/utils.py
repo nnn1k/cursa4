@@ -4,6 +4,10 @@ import smtplib
 from flask import current_app, redirect, flash
 from os.path import join, dirname, realpath
 
+import pandas as pd
+import datetime
+from dateutil.relativedelta import relativedelta
+
 def get_random_code():
     res = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
     return res
@@ -42,3 +46,16 @@ def create_cls_object(res, cls):
         return cls(*res)
     else:
         return None
+
+def get_date_to_month_list():
+    date1 = datetime.datetime.today() + relativedelta(days=1)
+    date2 = datetime.datetime.today() + relativedelta(months=1)
+    mydates = pd.date_range(date1, date2).tolist()
+    return [i.strftime('%Y-%m-%d') for i in mydates]
+
+def get_time_list():
+    mytimes = []
+    for i in range(9, 22):
+        mytimes.append(f'{i}:00')
+        mytimes.append(f'{i}:30')
+    return mytimes
