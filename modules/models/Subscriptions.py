@@ -5,10 +5,10 @@ class Subscriptions:
     user_id: int
     service_id: int
     subscription_type_id: int
-    date_start: datetime
-    date_end: datetime
+    date_start: datetime.date
+    date_end: datetime.date
 
-    def __init__(self, id=None, user_id=None, service_id=None, subscription_type_id=None, date_start=None, date_end=None):
+    def __init__(self, id, user_id, service_id, subscription_type_id, date_start, date_end):
         self.id = id
         self.user_id = user_id
         self.service_id = service_id

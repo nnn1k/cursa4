@@ -2,6 +2,7 @@ from flask import render_template, request, redirect, url_for, flash, Blueprint,
 from flask_login import login_user, logout_user, current_user, login_required
 from modules.database.queries.user_queries import *
 from modules.func.utils import *
+from modules.database.queries.services_queries import get_sport_activities, get_subscriptions_history
 
 profile = Blueprint('profile', __name__)
 
@@ -27,4 +28,6 @@ def userform_page():
 @profile.route('/', methods=['GET', 'POST'])
 @login_required
 def profile_page():
-    return render_template('profile/lk.html', page_type='profile')
+    sports_activities = get_sport_activities(current_user.id)
+    subscriptions = get_subscriptions_history(current_user.id)
+    return render_template('profile/lk.html', page_type='profile', sports_activities=sports_activities, subscriptions=subscriptions)

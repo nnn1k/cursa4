@@ -3,7 +3,6 @@ import random
 import smtplib
 from flask import current_app, redirect, flash
 from os.path import join, dirname, realpath
-
 import pandas as pd
 import datetime
 from dateutil.relativedelta import relativedelta
@@ -59,3 +58,4 @@ def get_time_list():
         mytimes.append(f'{i}:00')
         mytimes.append(f'{i}:30')
     return mytimes
+
