@@ -24,25 +24,25 @@
                     <option value="{{ dates[0] }}">-- Выберите дату --</option>
                     {% for date in dates %}
                      <option value="{{ date }}">{{ date }}</option>
-                {% endfor %}
+                    {% endfor %}
                 </select>
 
                 <select id="timeSelect" name="subscription_type" class="time-select">
                     <option value="{{ subscriptions_types[0] }}">-- Выберите вид абонемента --</option>
                     {% for subscription_type in subscriptions_types %}
                      <option value="{{ subscription_type.id }}">{{ subscription_type.name }}</option>
-                {% endfor %}
+                    {% endfor %}
                 </select>
-                <input type="submit" class="button-sign-up" value="Записаться">
+                <p id="price" class="price"> price </p>
+                <input type="submit" class="button-sign-up" value="Купить абонемент">
                 </form>
 
                 <a href="{{ url_for('services.services_page') }}">обратно</a>
             </div>
-
-
         </div>
 
     {% endblock %}
+
 </body>
 
 </html>

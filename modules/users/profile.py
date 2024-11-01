@@ -30,4 +30,5 @@ def userform_page():
 def profile_page():
     sports_activities = get_sport_activities(current_user.id)
     subscriptions = get_subscriptions_history(current_user.id)
-    return render_template('profile/lk.html', page_type='profile', sports_activities=sports_activities, subscriptions=subscriptions)
+    return render_template('profile/lk.html', page_type='profile',
+                           sports_activities=sports_activities, subscriptions=subscriptions)
