@@ -54,6 +54,9 @@
                 <div class="price-aboniment">
                     <p class="p-price-aboniment"> {{ subscription.price }} руб.</p>
                 </div>
+                <div class="is-active-aboniment">
+                    <p class="p-is-active-aboniment"> {{ 'Активен' if subscription.is_active else 'Не активен' }}</p>
+                </div>
             </div>
             {% endfor %}
         </div>

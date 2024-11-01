@@ -24,7 +24,6 @@ app.register_blueprint(services, url_prefix='/services')
 
 manager = LoginManager(app)
 
-
 @app.route('/')
 def start_page():
     return render_template('startpages/startpage.html')
@@ -56,8 +55,6 @@ def info_page():
         review.create_at = review.create_at.strftime("%Y-%m-%d %H:%M:%S")
 
     return render_template('startpages/info.html', reviews=reviews, current_user_review=current_user_review)
-
-
 
 @app.after_request
 def redirect_to_signin(response):

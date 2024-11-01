@@ -30,5 +30,13 @@ def userform_page():
 def profile_page():
     sports_activities = get_sport_activities(current_user.id)
     subscriptions = get_subscriptions_history(current_user.id)
+    for subscription in subscriptions:
+        date_split = subscription.date_end.split('-')
+        date = datetime.datetime.now().date()
+        end_date = datetime.date(int(date_split[0]), int(date_split[1]), int(date_split[2]))
+        diff_date = (end_date - date).total_seconds()
+        if diff_date > 0:
+            subscription.is_active = True
+
     return render_template('profile/lk.html', page_type='profile',
                            sports_activities=sports_activities, subscriptions=subscriptions)
