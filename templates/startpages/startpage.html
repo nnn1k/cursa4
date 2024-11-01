@@ -2,24 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="static/styles/startpage.css">
+    <link rel="stylesheet" href="/static/styles/startpages/startpage.css">
     <title>startpage</title>
 </head>
 <body>
-    {% extends 'base.html' %}
+    {% extends 'other/base.html' %}
     {% block content %}
 
         <div class="centered-block">
-        <img src="static/img/background.jpg" alt="Картинка" class="foto">
+        <img src="/static/img/other-photos/background.jpg" alt="Картинка" class="foto">
             <div class="centered-content">
-                <img src="static/img/football.png" alt="" class="football">
-                <img src="static/img/watermelon.png" alt="" class="watermelon">
+                <img src="/static/img/other-photos/football.png" alt="" class="football">
                 <div class="text2">Лазурный<p>Лазурный спорткомплекс — зарядись энергией лета!</p>
                 </div>
-                <a href="./anketa.html" class="button1">Посмотреть услуги</a>
+                <a href="{{ url_for('services.services_page') }}" class="button-services">Посмотреть услуги</a>
             </div>
         </div>
-        <div class="info1">
+        <div class="about">
             <div class="info">
                 <div class="text3">Спорткомплекс «Лазурный» — это идеальное место для активного отдыха и занятия спортом.
                     Здесь вы найдёте разнообразные спортивные площадки, тренажёрный зал, бассейн и многое другое.
@@ -32,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="info1">
+        <div class="about">
             <div class="info">
                 <div class="text3">Что вы получите после от нас</div>
                 <div class="text8">Гарантия качества тренеровок</div>

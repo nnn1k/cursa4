@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/services/services.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <title>main</title>
+</head>
+
+<body>
+
+    {% extends 'other/base.html' %}
+    {% block content %}
+
+    <div class="centered-block">
+        {% for service in services %}
+        <div class="centered-content">
+            <img src="/static/img/services-photo/{{ service.photo_url }}" alt="Картинка" class="foto">
+            <div class="text-sport">{{ service.name }}
+                <p>{{ service.description }}</p></div>
+            {% if service.type_service == 'activity' %}
+                 <div class="services-price"><p>{{ service.price }} руб.</p></div>
+                <a href="{{ url_for('services.services_activity_page', id=service.id) }}" class="button-sign-up">Записаться</a>
+            {% elif service.type_service == 'subscription' %}
+                <a href="{{ url_for('services.services_subscription_page', id=service.id) }}" class="button-sign-up">Купить абонемент</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    {% endblock %}
+</body>
+
+</html>

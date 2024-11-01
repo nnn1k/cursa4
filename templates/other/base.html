@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/other/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <title>main</title>
+</head>
+<body>
+    {% block header %}
+
+    <header class="header">
+        <div class="logo"> <a href="{{ url_for('start_page') }}"> <div><img src="/static/img/other-photos/logo.png" alt="" class="logo-foto"></div></a></div>
+        <ul>
+{#            <li><a href="{{ url_for('start_page') }}">Главная</a></li>#}
+            <li><a href="{{ url_for('services.services_page') }}">Список услуг</a></li>
+            <li><a href="{{ url_for('info_page') }}">О нас</a></li>
+            <li><a href="{{ url_for('profile.profile_page') }}"> Личный кабинет</a></li>
+        </ul>
+        <div class="phone">+7 000 000 00 00</div>
+    </header>
+    {% endblock %}
+
+    <div class="content"> {% block content %} {% endblock %} </div>
+
+    {% block footer %}
+    {% if page_type != 'auth' %}
+    <footer>
+        <div class="footer">
+            <section>
+                <div class="logo">Спорткомплекс "Лазурный"<p>© Лазурный</p></div>
+            </section>
+            <section>
+                <div class="phone">+7 000 000 00 00</div>
+            </section>
+        </div>
+    </footer>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

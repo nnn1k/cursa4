@@ -22,7 +22,12 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.logo-foto{
+    width: 150px;
+}
+
 .header .logo {
+    display: flex;
     font-size: 24px;
     font-weight: bold;
     margin-right: 20px;
@@ -64,59 +69,7 @@ body {
 
 }
 
-
-
-.footer p {
-    text-align: left;
-}
-
-.form-field {
-    margin-bottom: 10px;
-}
-
-.reklama {
-    height: 200px;
-    background-image: url('/static/img/red.jpg');
-}
-
-.button-base {
-    background-color: #000000;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.reklama {
-    color: #fff;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.reklamaText{
-    font-size: large;
-    font-weight: bold;
-    background-position: center;
-    background-size: cover;
-}
-
-.reklamaText p{
-    font-size: 13px;
-    font-weight: lighter;
-}
-.input-field-base {
-    width: 300px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
 .content{
+    min-height: 100vh;
     height: 100%;
 }

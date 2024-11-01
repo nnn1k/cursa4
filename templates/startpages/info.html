@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/startpages/info.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet">
+    <title>main</title>
+</head>
+
+<body>
+{% extends 'other/base.html' %}
+{% block content %}
+    <div class="centered-block">
+        <img src="/static/img/other-photos/background.jpg" alt="Картинка" class="foto">
+        <div class="centered-content">
+            <img src="/static/img/other-photos/football.png" alt="" class="football">
+            <div class="text2">Лазурный<p>Лазурный спорткомплекс — зарядись энергией лета!</p>
+
+            </div>
+            <a href="#review" class="button-review">Отзывы</a>
+
+        </div>
+    </div>
+    <div class="block-history">
+        <div class="info">
+            <div class="text3">История спорткомплекса «Лазурный» началась в далёком 1967 году, когда в центре города
+                Кемерово был построен старый бассейн.
+                В 2005 году бассейн был капитально отремонтирован и модернизирован, после чего открылся как
+                спорткомплекс «Лазурный».
+                В 2007 году в нём появился теннисный центр, состоящий из четырёх полноразмерных теннисных кортов и двух
+                кортов под открытым небом.
+            </div>
+        </div>
+    </div>
+    {% if current_user.is_active %}
+    <div class="container">
+        <form method="post">
+        <div class="review-write">
+            <div class="Topic-Reviews">
+                <input class="review-pole1" id="textInput" name="title" placeholder="Введите вашу тему отзыва" value="{{ current_user_review.title }}">
+            </div>
+            <div class="review-text">
+                <input class="review-pole2" id="textInput" name="description" placeholder="Введите ваш отзыв" value="{{ current_user_review.description }}">
+            </div>
+            {% if current_user_review %}
+                <input type="submit" class="plase-review" value="Изменить отзыв" name="submit-review">
+                <input type="submit" class="plase-review-delete" value="Удалить отзыв" name="submit-review">
+            {% else %}
+                <input type="submit" class="plase-review" value="Оставить отзыв" name="submit-review">
+            {% endif %}
+
+        </div>
+         </form>
+    </div>
+    {% else %}
+    <div>
+        <h2 style="text-align: center"> Войдите что бы оставить свой отзыв <a href="{{ url_for('profile.profile_page') }}"> Войти </a></h2>
+    </div>
+    {% endif %}
+
+    {% if not reviews %}
+        <p> Отзывов пока нет...</p>
+    {% else %}
+
+
+    {% for review in reviews %}
+    <div class="container2" id="review">
+        <div class="review-complite">
+            <div class="review-background1">
+                <div class="FIO">
+                    <p>{{ review.user_name }} </p>
+                    <p>{{ review.user_surname }} </p>
+                    <p>{{ review.user_id }} </p>
+                </div>
+                <div class="date">
+                    <p>{{ review.create_at }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="review-complite">
+            <div class="review-background2">
+                <div class="review-title">
+                    <p>{{ review.title }}</p>
+                </div>
+                <div class="user-review">
+                    <p>{{ review.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+{% endblock %}
+</body>
+</html>

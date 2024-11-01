@@ -1,14 +1,15 @@
 from modules.database.db_class import db
 from modules.models.User import User
+from modules.func.utils import *
 
 def create_user_object(res):
-    if not res['error'] and res['result']:
-        return User(*res['result'][0])
-    else:
-        return None
+    if res:
+        return create_cls_object(res[0], User)
+    return None
+
 
 def auth_user(login, password) -> User:
-    res = db.execute_query('select * from users where login = ? and password = ?', login, password, is_select=True)
+    res = db.execute_query('select * from users where login = ? and password = ?', login, password, is_select=True)['result']
     return create_user_object(res)
 
 def add_user(login, password) -> User:
@@ -16,15 +17,14 @@ def add_user(login, password) -> User:
     return get_user_for_login(login)
 
 def get_user_for_login(login) -> User:
-    res = db.execute_query('select * from users where login = ?', login, is_select=True)
+    res = db.execute_query('select * from users where login = ?', login, is_select=True)['result']
     return create_user_object(res)
-
 def get_user_for_id(user_id) -> User:
-    res = db.execute_query('select * from users where id = ?', user_id,  is_select=True)
+    res = db.execute_query('select * from users where id = ?', user_id,  is_select=True)['result']
     return create_user_object(res)
 
 def get_user_for_email(email) -> User:
-    res = db.execute_query('select * from users where email = ?', email,  is_select=True)
+    res = db.execute_query('select * from users where email = ?', email,  is_select=True)['result'][0]
     return create_user_object(res)
 
 def filling_form(user_id, name, surname, email, phone, photo_url) -> User:
