@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/services/services_activity.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <title>main</title>
+</head>
+
+<body>
+
+    {% extends 'other/base.html' %}
+    {% block content %}
+        <div class="centered-block">
+            <div class="centered-content">
+                <img src="/static/img/services-photo/{{ service.photo_url }}" alt="Картинка" class="foto">
+                <form method="post">
+                <select id="dateSelect" name="date" class="date-select">
+                    <option value="{{ dates[0] }}">-- Выберите дату --</option>
+                    {% for date in dates %}
+                     <option value="{{ date }}">{{ date }}</option>
+                    {% endfor %}
+                </select>
+
+                <select id="timeSelect" name="subscription_type" class="time-select">
+                    <option value="{{ subscriptions_types[0] }}">-- Выберите вид абонемента --</option>
+                    {% for subscription_type in subscriptions_types %}
+                     <option value="{{ subscription_type.id }}">{{ subscription_type.name }}</option>
+                    {% endfor %}
+                </select>
+                <p id="price" class="price"> price </p>
+                <input type="submit" class="button-sign-up" value="Купить абонемент">
+                </form>
+
+                <a href="{{ url_for('services.services_page') }}">обратно</a>
+            </div>
+        </div>
+
+    {% endblock %}
+
+</body>
+
+</html>

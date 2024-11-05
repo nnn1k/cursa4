@@ -23,8 +23,12 @@
             <img src="/static/img/services-photo/{{ service.photo_url }}" alt="Картинка" class="foto">
             <div class="text-sport">{{ service.name }}
                 <p>{{ service.description }}</p></div>
-               <div class="services-price"><p>ЦЕНА...</p></div>
-                <a href="{{ url_for('services.services_signup_page') }}" class="button-sign-up">Записаться</a>
+            {% if service.type_service == 'activity' %}
+                 <div class="services-price"><p>{{ service.price }} руб.</p></div>
+                <a href="{{ url_for('services.services_activity_page', id=service.id) }}" class="button-sign-up">Записаться</a>
+            {% elif service.type_service == 'subscription' %}
+                <a href="{{ url_for('services.services_subscription_page', id=service.id) }}" class="button-sign-up">Купить абонемент</a>
+            {% endif %}
         </div>
         {% endfor %}
     </div>

@@ -40,53 +40,44 @@
      <div class="all-history">
         <div class="h-aboniments">
             <h1> История абонементов</h1><br>
+            {% for subscription in subscriptions %}
             <div class="one-aboniment">
                 <div class="circle-services">
-                    <img class="service-img" src="/static/img/photos/default.png">
+                    <img class="service-img" src="/static/img/services-photo/{{ subscription.service_photo_url }}">
                 </div>
                 <div class="title-aboniment">
-                    <p class="p-title-aboniment"> Название </p>
+                    <p class="p-title-aboniment"> {{ subscription.name }} </p>
                 </div>
                 <div class="date-aboniment">
-                    <p class="p-date-aboniment"> дата начала - дата конца  </p>
+                    <p class="p-date-aboniment"> {{ subscription.date_start}} - {{ subscription.date_end}}  </p>
                 </div>
                 <div class="price-aboniment">
-                    <p class="p-price-aboniment"> цена  </p>
+                    <p class="p-price-aboniment"> {{ subscription.price }} руб.</p>
+                </div>
+                <div class="is-active-aboniment">
+                    <p class="p-is-active-aboniment"> {{ 'Активен' if subscription.is_active else 'Не активен' }}</p>
                 </div>
             </div>
-            <div class="one-aboniment">
-                <div class="circle-services">
-                    <img class="service-img" src="/static/img/photos/default.png">
-                </div>
-                <div class="title-aboniment">
-                    <p class="p-title-aboniment"> Название </p>
-                </div>
-                <div class="date-aboniment">
-                    <p class="p-date-aboniment"> дата начала - дата конца  </p>
-                </div>
-                <div class="price-aboniment">
-                    <p class="p-price-aboniment"> цена </p>
-                </div>
-            </div>
-
-
+            {% endfor %}
         </div>
         <div class="h-activities">
             <h1> История занятий</h1><br>
+            {% for activity in sports_activities %}
             <div class="one-activity">
                 <div class="circle-services">
-                    <img class="service-img" src="/static/img/photos/default.png">
+                    <img class="service-img" src="/static/img/services-photo/{{ activity.service_photo_url }}">
                 </div>
                 <div class="title-activity">
-                    <p class="p-title-activity"> Название </p>
+                    <p class="p-title-activity"> {{ activity.service_name }} </p>
                 </div>
                 <div class="price-activity">
-                    <p class="p-price-activity"> Цена </p>
+                    <p class="p-price-activity"> {{ activity.price }} руб. </p>
                 </div>
                 <div class="date-activity">
-                    <p class="p-date-activity"> Дата </p>
+                    <p class="p-date-activity"> {{ activity.date }} </p>
                 </div>
             </div>
+            {% endfor %}
         </div>
      </div>
     {% endblock %}
