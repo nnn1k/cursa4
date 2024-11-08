@@ -64,6 +64,7 @@ def redirect_to_signin(response):
     #if response.status_code == 500:
     #return redirect(url_for('test.error_500'))
 
+
     return response
 
 @manager.user_loader
