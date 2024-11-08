@@ -89,3 +89,20 @@ body{
     top: 80%;
     left: 62.5%;
 }
+
+.button-back{
+    position: absolute;
+    text-align: center;
+    position: absolute;
+    background-color: #489cfd;
+    border: 2px solid #0038c4;
+    color: #fff;
+    padding: 15px 30px;
+    top: 5%;
+    left: 6.5%;
+    width: 130px;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}

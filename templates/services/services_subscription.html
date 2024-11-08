@@ -33,11 +33,11 @@
                      <option value="{{ subscription_type.id }}">{{ subscription_type.name }}</option>
                     {% endfor %}
                 </select>
-                <p id="price" class="price"> price </p>
+
                 <input type="submit" class="button-sign-up" value="Купить абонемент">
                 </form>
 
-                <a href="{{ url_for('services.services_page') }}">обратно</a>
+                <a class="button-back" href="{{ url_for('services.services_page') }}">обратно</a>
             </div>
         </div>
 
