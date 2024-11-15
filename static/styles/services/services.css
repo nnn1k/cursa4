@@ -82,3 +82,8 @@ body{
     transform: translate(-50%, -50%);
 }
 
+.prices{
+    position: absolute;
+    top: 80%;
+    left: 65.5%;
+}
