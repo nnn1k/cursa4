@@ -9,7 +9,8 @@ services = Blueprint('services', __name__, template_folder='templates', static_f
 @services.route('/', methods=['GET', 'POST'])
 def services_page():
     services = select_all_services()
-    return render_template('/services/services.html', services=services)
+    subscriptions_types = get_subscriptions_types()
+    return render_template('/services/services.html', services=services, subscriptions_types=subscriptions_types)
 
 @services.route('/activity/<id>', methods=['GET', 'POST'])
 @login_required

@@ -32,8 +32,8 @@
             <div class="background-balance">
                 <p class="p-balance"> ВАШ БАЛАНС</p>
                 <p class="p-balance"> {{ current_user.balance }} рублей</p>
-                <p class="p-balance"> <a href=""> Пополнить </a></p>
-                <p class="p-balance"> <a href="{{ url_for('auth.logout') }}">выйти </a> </p>
+                <p class="p-balance"> <a class="pay" href=""> Пополнить </a></p>
+                <p class="p-balance"> <a class="logout" href="{{ url_for('auth.logout') }}">выйти </a> </p>
             </div>
         </div>
      </div>
@@ -53,6 +53,9 @@
                 </div>
                 <div class="price-aboniment">
                     <p class="p-price-aboniment"> {{ subscription.price }} руб.</p>
+                </div>
+                <div class="is-active-aboniment">
+                    <p class="p-is-active-aboniment"> {{ 'Активен' if subscription.is_active else 'Не активен' }}</p>
                 </div>
             </div>
             {% endfor %}

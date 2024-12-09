@@ -7,8 +7,9 @@ class SubscriptionsHistory:
     date_end: datetime.date
     price: int
     service_photo_url: str
+    is_active: bool
 
-    def __init__(self, id, name, date_start, date_end, price, service_photo_url):
+    def __init__(self, id, name, date_start, date_end, price, service_photo_url, is_active=False):
         self.id = id
         self.name = name
         self.date_start = date_start

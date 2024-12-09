@@ -24,7 +24,6 @@ app.register_blueprint(services, url_prefix='/services')
 
 manager = LoginManager(app)
 
-
 @app.route('/')
 def start_page():
     return render_template('startpages/startpage.html')
@@ -57,8 +56,6 @@ def info_page():
 
     return render_template('startpages/info.html', reviews=reviews, current_user_review=current_user_review)
 
-
-
 @app.after_request
 def redirect_to_signin(response):
     if response.status_code == 401:
@@ -66,6 +63,7 @@ def redirect_to_signin(response):
 
     #if response.status_code == 500:
     #return redirect(url_for('test.error_500'))
+
 
     return response
 

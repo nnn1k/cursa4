@@ -27,6 +27,11 @@
                  <div class="services-price"><p>{{ service.price }} руб.</p></div>
                 <a href="{{ url_for('services.services_activity_page', id=service.id) }}" class="button-sign-up">Записаться</a>
             {% elif service.type_service == 'subscription' %}
+                <div id="prices" class="prices">
+                    {% for type in subscriptions_types %}
+                    <p id="price" class="price"> {{ type.name }} - {{ type.price }}</p>
+                    {% endfor %}
+                </div>
                 <a href="{{ url_for('services.services_subscription_page', id=service.id) }}" class="button-sign-up">Купить абонемент</a>
             {% endif %}
         </div>
